@@ -6,6 +6,9 @@
 
 ### Added
 
+- 正式双语项目说明：`README.md`（简体中文）与 `README.en.md`（English），含语言切换与文档同步维护约定。  
+- `CONTRIBUTING.md`：长期 Git 提交规范（Conventional Commits、提交边界与安全规则）。  
+- 双语 README 一致性轻量测试（`tests/docs/readme-bilingual.test.ts`）。  
 - P2.0：原子 Skill `web-design-brief`（Design Brief）。  
 - P2.0：原子 Skill `web-information-architecture`（Sitemap / 导航 / 用户路径）。  
 - P2.0：原子 Skill `web-design-system`（语义 Tokens、组件与无障碍规则 + `design-tokens.json`）。  
@@ -19,6 +22,7 @@
 
 ### Changed
 
+- `README.md`：升级为完整中文主文档（定位、宿主兼容性、Skills、安装、使用、贡献、许可证）。  
 - P2.0：`web-design-workflow` 将 brief / IA / design-system 标为 available；page-design 等仍为 planned；支持 IA∥视觉方向并行。  
 - P2.0：`web-visual-direction` 默认对接 `design-output/01-design-brief.md` 与 `design-output/` 输出路径。  
 - `docs/DECISION_LOG.md`：追加 D-006（Web 原子 Skills 职责划分）。  

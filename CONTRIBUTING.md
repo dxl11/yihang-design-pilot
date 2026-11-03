@@ -44,6 +44,54 @@ pnpm verify
 3. 开 PR，用仓库模板说明动机与测试。  
 4. 等待 CI 与维护者审阅。
 
+## Git 提交规范（长期有效）
+
+每个明确完成的开发任务或逻辑完整的修改批次，**必须**提交 Git。禁止只改代码不 commit。
+
+### 开始任务前
+
+```bash
+git status
+git branch --show-current
+git log -5 --oneline
+```
+
+工作区若不干净：先识别修改归属。不得擅自丢弃、覆盖或提交不属于当前任务的用户改动。
+
+### 提交前检查清单
+
+1. 核对 `git status` / `git diff` 范围。  
+2. 运行相关测试与 `pnpm verify`。  
+3. 确认无密钥、Token、临时垃圾文件。  
+4. 使用 Conventional Commits 编写可读 message。  
+5. commit 后用 `git status` / `git log -1` 确认结果。
+
+### Commit Message 格式
+
+```text
+<type>(<scope>): <简洁主题>
+
+<body：说明为何修改、改了什么、测试结果、已知限制>
+```
+
+常用 `type`：`feat` / `fix` / `docs` / `test` / `refactor` / `chore` / `build` / `ci`。
+
+禁止无信息备注：`update`、`modify`、`fix`、`完成`、`优化` 等。
+
+### 提交边界
+
+- 一个 commit 对应一个完整逻辑批次（例如「双语 README」或「某一个 Skill」）。  
+- 不要混入不相关改动；也不要为刷数量拆无意义小提交。
+
+### 安全
+
+禁止未经授权的 `git reset --hard`、`git clean -fd`、强制推送、重写已推送历史。  
+禁止提交密钥与密码。除非维护者明确要求，不要 amend 他人或已推送提交。
+
+### 双语文档
+
+修改 `README.md` 或 `README.en.md` 时必须检查另一语言版本是否需同步（安装、Skills 列表、兼容性、许可证等）。
+
 ## 行为准则
 
 见 `CODE_OF_CONDUCT.md`。
