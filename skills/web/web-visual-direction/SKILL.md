@@ -69,7 +69,7 @@ metadata:
 - 示例：[examples.md](references/examples.md)  
 - 可选知识库：`knowledge/design-styles/`（P1 可能仍为空，缺省时勿伪造「已迁移风格 ID」）  
 - 上游：`web-design-brief`（available）、`web-information-architecture`（available，可并行）  
-- 下游：`web-design-system`（available）、未来 `web-page-design`（planned）  
+- 下游：`web-design-system`（available）、`web-page-design`（available）  
 - 品牌类 Skills：仍为 planned  
 
 ## 输出要求

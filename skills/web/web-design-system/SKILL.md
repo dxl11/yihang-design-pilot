@@ -141,7 +141,7 @@ md 必需章节见 [output-schema.md](references/output-schema.md)。
 
 | 上游 | `web-design-brief`、`web-visual-direction`（批准）、建议 `web-information-architecture` |
 |---|---|
-| 下游 | 未来 `web-page-design` / `web-responsive-design` |
+| 下游 | `web-page-design`（available）；`web-responsive-design`（planned） |
 | 编排 | `web-design-workflow` |
 
 ## 示例

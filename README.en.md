@@ -78,13 +78,13 @@ Authoritative source: `skills/`. Status must match each Skill / Workflow `SKILL.
 | `web-information-architecture` | Sitemap, navigation, and user paths → `02-information-architecture.md` | **Available** |
 | `web-visual-direction` | Visual direction exploration and selection | **Available** |
 | `web-design-system` | Design Tokens, components, and implementation rules → `03-design-system.md` + `design-tokens.json` | **Available** |
-| `web-design-workflow` | Orchestrates Brief → IA ∥ Visual → Design System → (later page work) | **Available** (some later stages remain Planned) |
+| `web-page-design` | Page-level structure, layout, interaction, and content specs → `04-page-design/` | **Available** |
+| `web-design-workflow` | Orchestrates Brief → IA ∥ Visual → Design System → Page Design → (later) | **Available** (responsive and review stages remain Planned) |
 
 ### Planned (no empty Skill directories)
 
 | Skill | Description | Status |
 |---|---|---|
-| `web-page-design` | Page-level design execution | **Planned** |
 | `web-responsive-design` | Responsive design specialization | **Planned** |
 | `web-design-review` | Design Review / quality audit | **Planned** |
 
@@ -220,7 +220,8 @@ Raw project materials
     → web-information-architecture     → design-output/02-information-architecture.md
     → web-visual-direction (∥ IA OK)   → visual-directions.md → then visual-direction.md + direction-approved.md
     → web-design-system                → design-output/03-design-system.md + design-tokens.json
-    → web-page-design                  (Planned — not shipped)
+    → web-page-design                  → design-output/04-page-design/<page-id>/page-design.md
+    → web-responsive-design / web-design-review  (Planned)
 ```
 
 You may also invoke `web-design-workflow`; the agent should **Read** each stage `SKILL.md` (this repo does not ship a multi-agent Runtime).
@@ -230,7 +231,8 @@ You may also invoke `web-design-workflow`; the agent should **Read** each stage 
 1. **Design Brief** — “Use `web-design-brief` to turn my product notes into a Design Brief; label facts vs hypotheses.” → `01-design-brief.md`  
 2. **Information Architecture** — “Use `web-information-architecture` on the Brief for Sitemap, navigation, and primary paths.” → `02-information-architecture.md`  
 3. **Visual Direction** — “Use `web-visual-direction` for three meaningfully different directions; do not finalize a full Design System before approval.” → explore, then `direction-approved.md`  
-4. **Design System** — “Use `web-design-system` with Brief, IA, and the approved direction.” → `03-design-system.md` + valid `design-tokens.json`
+4. **Design System** — “Use `web-design-system` with Brief, IA, and the approved direction.” → `03-design-system.md` + valid `design-tokens.json`  
+5. **Page Design** — “Use `web-page-design` for Home (and course detail / pricing strategy pages); differentiate page types; inherit tokens; do not invent prices or reviews.” → `04-page-design/<page-id>/page-design.md`
 
 ### Output convention
 
@@ -260,9 +262,10 @@ docs/             # Guides, audits, compatibility, decision log
 | P1 Skills-first scaffolding | Done |
 | P1.5 MIT, installers, host compatibility report | Done |
 | P2.0 First Web Design batch (Brief / IA / Design System) | Done |
-| P2.1 `web-page-design` and related Skills | **Not started** |
+| P2.1 `web-page-design` and workflow integration | Done |
+| P2.2 `web-responsive-design` / `web-design-review` | **Not started** |
 
-Next: page-level design, responsive and Design Review Skills; more host runtime evidence. See [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Next: responsive specialization and Design Review; more host runtime evidence. See [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
 ---
 

@@ -9,8 +9,9 @@
 
 ```text
 P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
-    → P2.0 Web Design Skills 第一批（Brief / IA / Design System）← 当前完成待审
-    → P2.1 页面设计等后续 Web Skills（未开始）
+    → P2.0 Web Design Skills 第一批（Brief / IA / Design System）
+    → P2.1 web-page-design + 工作流整合 ← 当前完成待审
+    → P2.2 响应式 / 设计审查（未开始）
     → 质检/导出脚本与品牌/PPT Skills（按需，见下文历史编号）
 ```
 
@@ -26,12 +27,25 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
 | `web-information-architecture` | **已完成** |
 | `web-design-system` | **已完成** |
 | `web-visual-direction` | 既有；已做交接路径最小更新 |
-| `web-design-workflow` | 既有；依赖状态已更新 |
-| `web-page-design` / `web-responsive-design` / `web-design-review` | **未开始**（禁止空壳） |
+| `web-design-workflow` | 既有；依赖状态已更新（P2.1 再更新 page-design） |
 
 验收：`pnpm verify`；`examples/web/online-education-site` 贯穿案例；D-006。
 
 **本阶段不做**：Agent Runtime、设计引擎、SaaS、Huashu 风格全量迁移。
+
+---
+
+## P2.1 — Web Page Design（Prompt 2.1）
+
+**目标**：页面级专业设计 Skill，继承 Brief/IA/方向/系统，输出可交接页面规格。
+
+| Skill | 状态 |
+|---|---|
+| `web-page-design` | **已完成** |
+| `web-design-workflow` | 阶段 6 → available |
+| `web-responsive-design` / `web-design-review` | **未开始**（禁止空壳） |
+
+验收：三页案例（首页/课程详情/价格策略）；结构+案例测试；`pnpm verify`；D-007。
 
 ---
 

@@ -114,3 +114,15 @@
 - Brief：目标分层、JTBD/任务分析、假设标注、成功指标待确认。  
 - IA：内容盘点、任务优先于组织部门、导航模型、路径与死路检查。  
 - Design System：语义化 tokens、组件状态完备、WCAG 2.2 AA **目标**（非无证据宣称已认证）。
+
+---
+
+## 2026-11-03 · D-007：页面设计 Skill 边界与交付（P2.1）
+
+### 裁定
+
+1. `web-page-design` 只做**页面级**规格：任务/类型、信息层级、结构、布局执行、交互状态、内容结构、自检。  
+2. **不**重做 Brief / 全站 IA / 视觉方向选定 / 全局 tokens；数值与组件继承 `03-design-system` 与 `design-tokens.json`。  
+3. 默认输出：`design-output/04-page-design/<page-id>/page-design.md`（必需六节）；多页用 `_index.md`。  
+4. 允许案例中设计 IA 尚未纳入的验证页（如定价页），但必须声明偏离，且**不得**把未确认价格写成 FACT。  
+5. `web-responsive-design` 与 `web-design-review` 仍为 planned，不建空壳。

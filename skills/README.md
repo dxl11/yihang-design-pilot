@@ -14,7 +14,7 @@ skills/
 
 安装到 Cursor / Claude Code / Codex 时，请将**叶目录** `<skill-name>/` 放到各宿主 skills 发现路径（见 `docs/AGENT_COMPATIBILITY.md`）。
 
-## 当前（P2.0 Web 第一批）
+## 当前（P2.1）
 
 | Skill | 类型 | 路径 |
 |---|---|---|
@@ -22,6 +22,7 @@ skills/
 | web-information-architecture | atomic | `web/web-information-architecture/` |
 | web-visual-direction | atomic | `web/web-visual-direction/` |
 | web-design-system | atomic | `web/web-design-system/` |
+| web-page-design | atomic | `web/web-page-design/` |
 | web-design-workflow | workflow | `web/web-design-workflow/` |
 
-其他 domain 目录仅作规划占位说明，**不**创建空壳 SKILL.md（含尚未开发的 `web-page-design` 等）。
+其他 domain 目录仅作规划占位说明，**不**创建空壳 SKILL.md（含尚未开发的 `web-responsive-design` / `web-design-review` 等）。

@@ -37,11 +37,11 @@ const availableSkills = [
   "web-information-architecture",
   "web-visual-direction",
   "web-design-system",
+  "web-page-design",
   "web-design-workflow",
 ] as const;
 
 const plannedSkills = [
-  "web-page-design",
   "web-responsive-design",
   "web-design-review",
 ] as const;

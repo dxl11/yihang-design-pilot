@@ -24,8 +24,11 @@ describe("web-design-workflow structure", () => {
     expect(content).toContain("web-design-brief");
     expect(content).toContain("web-information-architecture");
     expect(content).toContain("web-design-system");
+    expect(content).toContain("web-page-design");
     expect(content).toMatch(/用户确认/);
     expect(content).toMatch(/\*\*available\*\*/);
+    expect(content).toMatch(/web-page-design[\s\S]*?\*\*available\*\*/);
+    expect(content).toMatch(/web-responsive-design[\s\S]*?\*\*planned\*\*/);
   });
 
   it("ships stage contract reference file", () => {

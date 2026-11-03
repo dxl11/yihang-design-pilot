@@ -6,6 +6,8 @@
 
 ### Added
 
+- P2.1：原子 Skill `web-page-design`（页面结构/布局/交互/内容规格 → `04-page-design/`）。  
+- P2.1：启航学堂案例三页（home / course-detail / pricing）及结构与案例测试。  
 - 正式双语项目说明：`README.md`（简体中文）与 `README.en.md`（English），含语言切换与文档同步维护约定。  
 - `CONTRIBUTING.md`：长期 Git 提交规范（Conventional Commits、提交边界与安全规则）。  
 - 双语 README 一致性轻量测试（`tests/docs/readme-bilingual.test.ts`）。  
@@ -22,6 +24,8 @@
 
 ### Changed
 
+- P2.1：`web-design-workflow` 将 `web-page-design` 标为 available；responsive / review 仍为 planned；交付目录增加 `04-page-design/`。  
+- P2.1：双语 README / ROADMAP / skills 列表同步 Available 状态。  
 - `README.md`：升级为完整中文主文档（定位、宿主兼容性、Skills、安装、使用、贡献、许可证）。  
 - P2.0：`web-design-workflow` 将 brief / IA / design-system 标为 available；page-design 等仍为 planned；支持 IA∥视觉方向并行。  
 - P2.0：`web-visual-direction` 默认对接 `design-output/01-design-brief.md` 与 `design-output/` 输出路径。  

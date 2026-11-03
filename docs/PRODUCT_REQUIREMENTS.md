@@ -126,15 +126,15 @@
 
 ### 9.1 必须有（已交付）
 
-- 独立 Skill：需求分析 Brief、信息架构、视觉方向、设计系统。  
-- 结构化交付：`design-output/01`–`03` + 可选 `design-tokens.json`。  
+- 独立 Skill：需求分析 Brief、信息架构、视觉方向、设计系统、**页面设计**。  
+- 结构化交付：`design-output/01`–`03`、`04-page-design/` + 可选 `design-tokens.json`。  
 - 事实/假设标记；禁止伪造用户研究与未执行的工具结果。  
 - 工作流编排与 planned 依赖诚实标注。  
-- 至少一个贯穿案例 + `pnpm verify`。
+- 至少一个贯穿案例（含多页面规格）+ `pnpm verify`。
 
 ### 9.2 必须有（后续，未交付）
 
-- `web-page-design`、响应式专项、设计审查 Skill。  
+- 响应式专项、设计审查 Skill。  
 - 真实宿主上的端到端页面 HTML 交付验收。
 
 ### 9.3 明确不做（持续）
