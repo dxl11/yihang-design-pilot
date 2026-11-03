@@ -1,0 +1,36 @@
+{
+  "name": "yihang-design-pilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source professional AI design Skills for Cursor, Claude Code, Codex, and compatible agents",
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:skills": "tsx scripts/common/validate-skills.ts",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm validate:skills"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2",
+    "vitest": "^2.1.8",
+    "yaml": "^2.6.1",
+    "zod": "^3.24.1"
+  }
+}

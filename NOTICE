@@ -1,0 +1,26 @@
+yihang-design-pilot
+Copyright (c) 2026 yihang-design-pilot contributors
+
+This product is licensed under the MIT License (see LICENSE).
+
+-------------------------------------------------------------------------------
+Third-party and upstream notes
+
+1. npm / Node development dependencies
+   See docs/THIRD_PARTY_LICENSES.md and the output of `pnpm licenses list`.
+   Runtime package of this repository currently ships Skills (Markdown) and
+   TypeScript tooling; dependency licenses apply to those tooling packages.
+
+2. Huashu Design (https://github.com/alchaincyf/huashu-design)
+   Subject repository is MIT-licensed for its own code/docs. This project has
+   NOT copied Huashu BGM, SFX, or full style specimen binaries into the default
+   distribution. Methodological inspiration is documented in docs/REUSE_AUDIT.md.
+   Any future code reuse must preserve upstream copyright notices.
+
+3. Excluded from default distribution (LICENSE_UNCONFIRMED or out of scope)
+   - Huashu assets/bgm-*.mp3
+   - Huashu assets/sfx/**
+   - Unverified fonts / trademarked brand mark files
+   - User project deliverables under unrelated directories
+
+MIT on this repository does NOT re-license third-party assets.
