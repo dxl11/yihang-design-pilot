@@ -10,8 +10,9 @@
 ```text
 P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
     → P2.0 Web Design Skills 第一批（Brief / IA / Design System）
-    → P2.1 web-page-design + 工作流整合 ← 当前完成待审
-    → P2.2 响应式 / 设计审查（未开始）
+    → P2.1 web-page-design + 工作流整合
+    → P2.2 web-responsive-design + 工作流整合 ← 当前完成待审
+    → P2.3 web-design-review（未开始）
     → 质检/导出脚本与品牌/PPT Skills（按需，见下文历史编号）
 ```
 
@@ -43,9 +44,23 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
 |---|---|
 | `web-page-design` | **已完成** |
 | `web-design-workflow` | 阶段 6 → available |
-| `web-responsive-design` / `web-design-review` | **未开始**（禁止空壳） |
+| `web-design-review` | **未开始**（禁止空壳；见 P2.3） |
 
 验收：三页案例（首页/课程详情/价格策略）；结构+案例测试；`pnpm verify`；D-007。
+
+---
+
+## P2.2 — Web Responsive Design（Prompt 2.2）
+
+**目标**：在 Page Design 与 Design System 之上交付跨视口专业响应式规格。
+
+| Skill | 状态 |
+|---|---|
+| `web-responsive-design` | **已完成** |
+| `web-design-workflow` | 阶段 7 → available |
+| `web-design-review` | **未开始**（禁止空壳） |
+
+验收：三页差异化响应式案例；NOT TESTED 诚实标记；`pnpm verify`；D-008。
 
 ---
 

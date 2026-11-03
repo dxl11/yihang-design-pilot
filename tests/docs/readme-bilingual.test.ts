@@ -38,13 +38,11 @@ const availableSkills = [
   "web-visual-direction",
   "web-design-system",
   "web-page-design",
+  "web-responsive-design",
   "web-design-workflow",
 ] as const;
 
-const plannedSkills = [
-  "web-responsive-design",
-  "web-design-review",
-] as const;
+const plannedSkills = ["web-design-review"] as const;
 
 describe("bilingual README", () => {
   const zh = readRepo("README.md");

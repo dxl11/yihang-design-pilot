@@ -8,7 +8,7 @@ description: >-
   workflow.
 metadata:
   ydp.kind: workflow
-  version: "0.3.0"
+  version: "0.4.0"
 ---
 
 # Web Design Workflow
@@ -50,13 +50,13 @@ metadata:
 | 4 | 视觉方向 | `web-visual-direction` | **available** | **是** |
 | 5 | 设计系统 | `web-design-system` | **available** | 否（大改品牌时建议确认） |
 | 6 | 页面设计 | `web-page-design` | **available** | 建议确认主转化文案与关键页范围 |
-| 7 | 响应式 | `web-responsive-design` | **planned** | 否 |
+| 7 | 响应式 | `web-responsive-design` | **available** | 建议确认主转化在窄屏仍可达 |
 | 8 | 质量审查 | `web-design-review` | **planned** | 否 |
 | 9 | 修改迭代 | （回到 6–8 或 4–5） | — | 视红线 |
 | 10 | 最终交付 | （本工作流收口） | — | 是 |
 
 **并行**：阶段 2 与 4 可在 Brief 后并行；若并行，方向样例页应在 IA 定稿后复核。  
-**顺序约束**：阶段 5 需要阶段 4 的批准（或显式跳过记录）；阶段 6 强烈建议已有阶段 1、4、5（及建议 2）。
+**顺序约束**：阶段 5 需要阶段 4 的批准（或显式跳过记录）；阶段 6 强烈建议已有阶段 1、4、5（及建议 2）；阶段 7 强烈建议已有阶段 6 与 5。
 
 Available 路径：
 
@@ -65,6 +65,7 @@ Available 路径：
 - `skills/web/web-visual-direction/SKILL.md`  
 - `skills/web/web-design-system/SKILL.md`  
 - `skills/web/web-page-design/SKILL.md`  
+- `skills/web/web-responsive-design/SKILL.md`  
 
 ## 默认交付目录
 
@@ -80,6 +81,9 @@ design-output/
   04-page-design/
     _index.md
     <page-id>/page-design.md
+  05-responsive-design/
+    _index.md
+    <page-id>/responsive-design.md
 ```
 
 ## 阶段详情
@@ -124,9 +128,14 @@ design-output/
 - **确认**：建议确认页面范围与主 CTA 文案；不代替 Design Review。  
 - **注意**：不在本阶段假装完成响应式专项或最终质量放行。
 
-### 7 — 响应式（planned）
+### 7 — 响应式（available）
 
-- Fallback：基于页面规格做 1440 / 375 检查记录；声明非 `web-responsive-design` 完整交付。
+- **调用**：Read `skills/web/web-responsive-design/SKILL.md` 全文执行。  
+- **输入**：`04-page-design/<page-id>/page-design.md`、设计系统与 tokens；建议 Brief/IA/方向。  
+- **输出**：`design-output/05-responsive-design/<page-id>/responsive-design.md`（及可选 `_index.md`）。  
+- **缺失上游**：无 page-design 则停止定稿或仅输出风险清单并标假设。  
+- **确认**：建议确认窄屏主 CTA 策略；**不**代替 Design Review；无浏览器跑测须标 NOT TESTED。  
+- **回退**：响应式与页面结构冲突时回阶段 6（或 5 若 token 不足）。
 
 ### 8 — 质量审查（planned）
 
@@ -134,12 +143,12 @@ design-output/
 
 ### 9 — 迭代
 
-- 优先修审查项与页面规格；无确认不重开三方向。  
+- 优先修审查项、响应式与页面规格；无确认不重开三方向。  
 - 同红灯连续 3 次：升级询问用户。
 
 ### 10 — 最终交付
 
-清单：Brief / IA / 方向批准 / 设计系统 / 页面规格 /（未来）响应式与审查报告；列出仍为 planned 的 Skill。
+清单：Brief / IA / 方向批准 / 设计系统 / 页面规格 / 响应式规格 /（未来）审查报告；列出仍为 planned 的 Skill（含 `web-design-review`）。
 
 ## 宿主兼容执行方式
 
@@ -149,9 +158,10 @@ design-output/
 
 ## 质量检查（工作流级）
 
-- [ ] Brief / IA / 方向 / 系统 / 页面设计状态与上表一致（无把 planned 标成完成）  
+- [ ] Brief / IA / 方向 / 系统 / 页面 / 响应式状态与上表一致（无把 planned 标成完成）  
 - [ ] 视觉确认节点已满足  
 - [ ] `design-output/` 文件可互相对照  
+- [ ] 未跑浏览器却宣称响应式「已验证通过」→ 红灯  
 - [ ] 未关闭红灯不宣称完成  
 
 ## 失败处理
@@ -161,4 +171,4 @@ design-output/
 | 拒绝所有方向 | 回阶段 4 换骨架 |
 | Brief 与 IA 冲突 | 停，先修订 Brief 或 IA |
 | 页面规格与系统冲突 | 回阶段 5 或 6；禁止页面私自另起全局 token |
-| 无工具截图 | 记录限制，不假装已做响应式验收 |
+| 无工具截图 / 未跑浏览器 | 响应式文档标 NOT TESTED，不假装验收通过 |

@@ -125,4 +125,17 @@
 2. **不**重做 Brief / 全站 IA / 视觉方向选定 / 全局 tokens；数值与组件继承 `03-design-system` 与 `design-tokens.json`。  
 3. 默认输出：`design-output/04-page-design/<page-id>/page-design.md`（必需六节）；多页用 `_index.md`。  
 4. 允许案例中设计 IA 尚未纳入的验证页（如定价页），但必须声明偏离，且**不得**把未确认价格写成 FACT。  
-5. `web-responsive-design` 与 `web-design-review` 仍为 planned，不建空壳。
+5. （历史）当时 `web-responsive-design` 与 `web-design-review` 仍为 planned；响应式已由 **D-008 / P2.2** 交付，审查仍 planned。
+
+---
+
+## 2026-11-03 · D-008：响应式设计 Skill 边界（P2.2）
+
+### 裁定
+
+1. `web-responsive-design` 只定义跨视口**如何变、为何变、如何验**；不重做 Page Design / 全局 tokens。  
+2. 断点优先继承 `design-tokens.json` 的 `breakpoint.*`；须写冲突驱动理由，禁止只抄设备名。  
+3. 输出：`design-output/05-responsive-design/<page-id>/responsive-design.md`（14 节）。  
+4. 未跑浏览器/工具时必须标 **NOT TESTED**；禁止宣称 WCAG 已认证或真机已通过。  
+5. 窄屏不得静默删除决策信息（定价权益、适合/不适合等）；可折叠或改布局。  
+6. `web-design-review` 仍 planned，不建空壳。

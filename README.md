@@ -79,13 +79,13 @@
 | `web-visual-direction` | 网站视觉方向探索与选定 | **Available** |
 | `web-design-system` | Design Tokens、组件与实现规则 → `03-design-system.md` + `design-tokens.json` | **Available** |
 | `web-page-design` | 页面级结构/布局/交互/内容规格 → `04-page-design/` | **Available** |
-| `web-design-workflow` | 编排 Brief → IA ∥ Visual → Design System → Page Design →（后续） | **Available**（响应式与审查阶段仍为 Planned） |
+| `web-responsive-design` | 跨视口布局/导航/组件与验证策略 → `05-responsive-design/` | **Available** |
+| `web-design-workflow` | 编排 Brief → IA ∥ Visual → System → Page → Responsive →（审查） | **Available**（Design Review 仍为 Planned） |
 
 ### Planned（未创建空壳目录）
 
 | Skill | 说明 | 状态 |
 |---|---|---|
-| `web-responsive-design` | 响应式专项 | **Planned** |
 | `web-design-review` | 设计质量审查 | **Planned** |
 
 品牌（Brand）、演示文稿（Presentation）等品类目录仅为规划占位说明，**尚未**提供可用 Skill。
@@ -221,7 +221,8 @@ pwsh -File scripts/install/uninstall.ps1 -TargetRoot tests/fixtures/host-compati
     → web-visual-direction（可与 IA 并行）→ visual-directions.md → 选定后 visual-direction.md + direction-approved.md
     → web-design-system         → design-output/03-design-system.md + design-tokens.json
     → web-page-design           → design-output/04-page-design/<page-id>/page-design.md
-    → web-responsive-design / web-design-review  （Planned）
+    → web-responsive-design     → design-output/05-responsive-design/<page-id>/responsive-design.md
+    → web-design-review        （Planned）
 ```
 
 也可直接调用 `web-design-workflow`，由 Agent **Read** 各阶段 `SKILL.md` 执行（本项目不提供多 Agent Runtime）。
@@ -247,6 +248,10 @@ pwsh -File scripts/install/uninstall.ps1 -TargetRoot tests/fixtures/host-compati
 5. **页面设计**  
    「请使用 `web-page-design`，基于上述交付设计首页（及课程详情、价格策略页等），区分页面类型，继承 tokens，不要编造价格与评价。」  
    → 产出 `04-page-design/<page-id>/page-design.md`
+
+6. **响应式设计**  
+   「请使用 `web-responsive-design`，基于 page-design 与 tokens 制定断点理由、布局转换与移动导航；未跑浏览器须标 NOT TESTED。」  
+   → 产出 `05-responsive-design/<page-id>/responsive-design.md`
 
 ### 输出约定
 
@@ -277,9 +282,10 @@ docs/             # 规范、审计、兼容性、决策日志
 | P1.5 MIT、安装机制、宿主兼容性报告 | 已完成 |
 | P2.0 Web Design 第一批（Brief / IA / Design System） | 已完成 |
 | P2.1 `web-page-design` 与工作流整合 | 已完成 |
-| P2.2 `web-responsive-design` / `web-design-review` | **未开始** |
+| P2.2 `web-responsive-design` 与工作流整合 | 已完成 |
+| P2.3 `web-design-review` | **未开始** |
 
-下一阶段建议：响应式专项与设计审查；并在更多宿主上补充真实运行证据。详见 [`docs/ROADMAP.md`](docs/ROADMAP.md)。
+下一阶段建议：设计审查 Skill；并在更多宿主上补充真实运行证据。详见 [`docs/ROADMAP.md`](docs/ROADMAP.md)。
 
 ---
 

@@ -185,7 +185,7 @@ design-output/04-page-design/
 | 关系 | Skill |
 |---|---|
 | 上游 | `web-design-brief`、`web-information-architecture`、`web-visual-direction`、`web-design-system` |
-| 下游 | `web-responsive-design`（planned）、`web-design-review`（planned） |
+| 下游 | `web-responsive-design`（available）、`web-design-review`（planned） |
 | 编排 | `web-design-workflow` |
 
 ## 示例

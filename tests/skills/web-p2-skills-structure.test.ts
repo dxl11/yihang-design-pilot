@@ -41,10 +41,8 @@ describe("P2 web atomic skills structure", () => {
     });
   }
 
-  it("does not create empty planned skill shells for responsive/review", () => {
-    for (const banned of ["web-responsive-design", "web-design-review"]) {
-      expect(fs.existsSync(path.join(repoRoot, "skills/web", banned))).toBe(false);
-    }
+  it("does not create empty planned skill shell for design-review", () => {
+    expect(fs.existsSync(path.join(repoRoot, "skills/web/web-design-review"))).toBe(false);
   });
 
   it("workflow marks P2 skills available including page-design", () => {
@@ -56,7 +54,7 @@ describe("P2 web atomic skills structure", () => {
     expect(wf).toMatch(/web-information-architecture[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/web-design-system[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/web-page-design[\s\S]*?\*\*available\*\*/);
-    expect(wf).toMatch(/web-responsive-design[\s\S]*?\*\*planned\*\*/);
+    expect(wf).toMatch(/web-responsive-design[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/并行/);
   });
 
@@ -69,6 +67,7 @@ describe("P2 web atomic skills structure", () => {
       "web-design-workflow",
       "web-information-architecture",
       "web-page-design",
+      "web-responsive-design",
       "web-visual-direction",
     ]);
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);

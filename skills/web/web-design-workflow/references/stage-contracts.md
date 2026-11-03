@@ -25,7 +25,7 @@
 - `design-tokens.json`（合法 JSON；语义化 color tokens）  
 - 页面设计必须**引用**上述 tokens，不得另起全局平行色板  
 
-## page design → responsive / review（后两者 planned）
+## page design → responsive design（available）
 
 `04-page-design/<page-id>/page-design.md` 至少含：
 
@@ -36,12 +36,19 @@
 - Content（占位与禁止编造声明）  
 - Quality checklist  
 
-无完整页面规格时，planned 的 responsive/review Fallback 不得宣称「页面设计已完成」。
+`05-responsive-design/<page-id>/responsive-design.md` 至少含：视口/断点理由、布局转换、内容优先级、导航与组件、交互、验证清单（含 NOT TESTED）。  
+无 page-design 不得定稿响应式。未跑浏览器不得宣称「已验证通过」。
+
+## responsive → review（planned） / 实现
+
+- 响应式规格可指导实现与审查  
+- Review 仍为 planned；Fallback 见本文件红黄灯  
 
 ## page design → HTML 实现（非本仓库 Skill）
 
 - 入口行为与 CTA 去向可实现  
 - 文案非 Lorem；假数据未标 PLACEHOLDER/TODO 视为红灯  
+- 窄屏主 CTA 行为与 `05-responsive-design` 一致  
 
 ## Review 清单（人工/Agent）
 
@@ -54,6 +61,7 @@
 - 把 HYPOTHESIS 写成已验证用户研究  
 - 将 planned Skill 伪造成已完成交付  
 - 页面设计编造价格/评价并标为事实  
+- 未测试却宣称响应式/WCAG 已通过  
 
 ### Yellow
 
