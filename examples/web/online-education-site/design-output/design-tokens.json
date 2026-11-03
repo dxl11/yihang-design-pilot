@@ -1,0 +1,116 @@
+{
+  "$schemaNote": "yihang-design-pilot web-design-system tokens v0.1",
+  "meta": {
+    "project": "启航学堂官网",
+    "basedOnVisualDirection": "Direction B 青绿工作室",
+    "generatedBy": "web-design-system",
+    "date": "2026-11-03"
+  },
+  "color": {
+    "brand": {
+      "primary": {
+        "value": "#0F766E",
+        "source": "visual-direction Direction B / client teal preference"
+      },
+      "primaryHover": {
+        "value": "#0D9488",
+        "source": "derived"
+      }
+    },
+    "text": {
+      "primary": { "value": "#1C1917" },
+      "secondary": { "value": "#57534E" },
+      "inverse": { "value": "#FAFAF9" },
+      "link": { "value": "#0F766E" }
+    },
+    "surface": {
+      "default": { "value": "#F5F7F6" },
+      "elevated": { "value": "#FFFFFF" },
+      "muted": { "value": "#E7EEEC" },
+      "brandSubtle": { "value": "#CCFBF1" }
+    },
+    "border": {
+      "default": { "value": "#D6DEDB" },
+      "strong": { "value": "#A8B5B1" },
+      "focus": { "value": "#0F766E" }
+    },
+    "status": {
+      "success": { "value": "#15803D" },
+      "warning": { "value": "#B45309" },
+      "danger": { "value": "#B91C1C" }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "display": {
+        "value": "\"DM Sans\"",
+        "fallback": "ui-sans-serif, system-ui, \"PingFang SC\", \"Noto Sans SC\", sans-serif"
+      },
+      "body": {
+        "value": "\"Source Sans 3\"",
+        "fallback": "ui-sans-serif, system-ui, \"PingFang SC\", \"Noto Sans SC\", sans-serif"
+      }
+    },
+    "size": {
+      "xs": { "value": "12px" },
+      "sm": { "value": "14px" },
+      "md": { "value": "16px" },
+      "lg": { "value": "20px" },
+      "xl": { "value": "28px" },
+      "2xl": { "value": "40px" }
+    },
+    "lineHeight": {
+      "tight": { "value": "1.25" },
+      "normal": { "value": "1.5" },
+      "relaxed": { "value": "1.7" }
+    },
+    "weight": {
+      "regular": { "value": "400" },
+      "medium": { "value": "500" },
+      "semibold": { "value": "600" },
+      "bold": { "value": "700" }
+    }
+  },
+  "spacing": {
+    "scale": [4, 8, 12, 16, 24, 32, 48, 64]
+  },
+  "radius": {
+    "sm": { "value": "4px" },
+    "md": { "value": "8px" },
+    "lg": { "value": "16px" },
+    "pill": { "value": "9999px", "note": "avoid for primary marketing chrome; reserved" }
+  },
+  "shadow": {
+    "sm": { "value": "0 1px 2px rgba(28, 25, 23, 0.06)" },
+    "md": { "value": "0 4px 12px rgba(28, 25, 23, 0.08)" }
+  },
+  "border": {
+    "width": {
+      "default": { "value": "1px" },
+      "focus": { "value": "2px" }
+    }
+  },
+  "layout": {
+    "container": {
+      "max": { "value": "1160px" }
+    },
+    "gutter": {
+      "mobile": { "value": "16px" },
+      "desktop": { "value": "24px" }
+    },
+    "proseMax": { "value": "720px" }
+  },
+  "breakpoint": {
+    "sm": { "value": "640px" },
+    "md": { "value": "768px" },
+    "lg": { "value": "1024px" },
+    "xl": { "value": "1280px" }
+  },
+  "zIndex": {
+    "base": { "value": 0 },
+    "header": { "value": 100 },
+    "dropdown": { "value": 200 },
+    "modal": { "value": 300 },
+    "toast": { "value": 400 }
+  }
+}

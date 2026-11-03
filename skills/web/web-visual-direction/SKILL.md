@@ -35,8 +35,10 @@ metadata:
 
 | 输入 | 必填 | 说明 |
 |---|---|---|
-| 站点目标与受众 | 是 | 一句话目标 + 主受众 |
-| 核心信息 / 差异点 | 是 | 用户应记住什么 |
+| `design-output/01-design-brief.md`（或等价 Brief） | 强烈建议 | 有则优先；无则用下表字段现场收集 |
+| `design-output/02-information-architecture.md` | 否 | 有助于定「样例页」类型，可与 IA 并行 |
+| 站点目标与受众 | 是（无 Brief 时） | 一句话目标 + 主受众 |
+| 核心信息 / 差异点 | 是（无 Brief 时） | 用户应记住什么 |
 | 页面类型 | 是 | 落地页 / 官网 / 文档站营销层等 |
 | 品牌资产 | 否 | logo、色、字体、UI 截图；有则强制遵守 |
 | 参考站点 | 否 | URL 或截图；须注明「借版式还是借气质」 |
@@ -52,7 +54,7 @@ metadata:
 
 ## 执行流程
 
-1. **读入**：整理 brief 要点；若存在 `brand-profile.md` / `brand-spec.md` 则先读。  
+1. **读入**：优先读 `design-output/01-design-brief.md`；若存在 IA / `brand-profile.md` / `brand-spec.md` 则一并读。  
 2. **禁止事项清单**：写出本次明确不做的 AI 默认套路（见 [design-rules.md](references/design-rules.md)）。  
 3. **提案 3 个方向**（必须骨架不同，禁止只换色）：  
    - 每个方向按 [methodology.md](references/methodology.md) 填完整字段。  
@@ -66,12 +68,21 @@ metadata:
 - 规则细则：[methodology.md](references/methodology.md)、[design-rules.md](references/design-rules.md)  
 - 示例：[examples.md](references/examples.md)  
 - 可选知识库：`knowledge/design-styles/`（P1 可能仍为空，缺省时勿伪造「已迁移风格 ID」）  
-- 上游（若有）：`web-design-brief`（planned）、品牌类 Skills（planned）  
-- 下游：`web-page-design`（planned）、`web-design-system`（planned）
+- 上游：`web-design-brief`（available）、`web-information-architecture`（available，可并行）  
+- 下游：`web-design-system`（available）、未来 `web-page-design`（planned）  
+- 品牌类 Skills：仍为 planned  
 
 ## 输出要求
 
-在**用户项目目录**写入（不要写入本 skill 仓库）：
+在**用户项目目录**写入（不要写入本 skill 仓库）。默认推荐：
+
+```text
+design-output/visual-directions.md
+design-output/visual-direction.md          # 选定后
+design-output/direction-approved.md        # 选定后
+```
+
+兼容旧路径：项目根下同名文件亦可；新项目优先 `design-output/`。
 
 ### `visual-directions.md`
 

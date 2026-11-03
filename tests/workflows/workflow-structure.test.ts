@@ -21,7 +21,11 @@ describe("web-design-workflow structure", () => {
     expect(fm.metadata?.["ydp.kind"]).toBe("workflow");
     expect(content).toContain("planned");
     expect(content).toContain("web-visual-direction");
+    expect(content).toContain("web-design-brief");
+    expect(content).toContain("web-information-architecture");
+    expect(content).toContain("web-design-system");
     expect(content).toMatch(/用户确认/);
+    expect(content).toMatch(/\*\*available\*\*/);
   });
 
   it("ships stage contract reference file", () => {

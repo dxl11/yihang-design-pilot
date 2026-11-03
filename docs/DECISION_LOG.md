@@ -93,3 +93,24 @@
 - Cursor：规范已重核；隔离安装 PASS；本机 Cursor Agent 会话对 Skill 指令执行验证为 PARTIAL（见报告）。  
 - Claude Code：规范已重核；隔离布局安装 PASS；宿主 CLI **未安装** → 运行验证 BLOCKED。  
 - Codex：规范已重核；隔离布局安装 PASS；宿主 CLI **未安装** → 运行验证 BLOCKED。
+
+---
+
+## 2026-11-03 · D-006：Web Design 原子 Skills 职责划分（P2.0）
+
+### 裁定
+
+| Skill | 职责边界 | 默认交付 |
+|---|---|---|
+| `web-design-brief` | 商业/用户/约束 → 可验证 Design Brief；不画视觉、不做 Sitemap 定稿 | `design-output/01-design-brief.md` |
+| `web-information-architecture` | 内容与任务 → Sitemap/导航/路径；不定视觉 tokens | `design-output/02-information-architecture.md` |
+| `web-visual-direction` | 视觉策略与方向探索；不写完整组件库 | `design-output/visual-direction*.md`（兼容旧文件名） |
+| `web-design-system` | Tokens/组件/响应式/无障碍规则；不写全站页面 HTML | `design-output/03-design-system.md` + `design-tokens.json` |
+
+并行规则：IA 与 Visual Direction 可在 Brief 之后并行；Design System 须在 **批准的视觉方向**（或显式跳过记录）之后，并建议已有 IA。
+
+方法论基线（行业通用 + 本项目执行规范）：
+
+- Brief：目标分层、JTBD/任务分析、假设标注、成功指标待确认。  
+- IA：内容盘点、任务优先于组织部门、导航模型、路径与死路检查。  
+- Design System：语义化 tokens、组件状态完备、WCAG 2.2 AA **目标**（非无证据宣称已认证）。

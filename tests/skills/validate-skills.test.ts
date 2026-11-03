@@ -62,7 +62,13 @@ describe("repository skills", () => {
   it("finds the shipped example skills", () => {
     const dirs = findSkillDirectories(path.join(repoRoot, "skills"));
     const names = dirs.map((d) => path.basename(d)).sort();
-    expect(names).toEqual(["web-design-workflow", "web-visual-direction"]);
+    expect(names).toEqual([
+      "web-design-brief",
+      "web-design-system",
+      "web-design-workflow",
+      "web-information-architecture",
+      "web-visual-direction",
+    ]);
   });
 
   it("validates shipped skills without errors", () => {
@@ -146,7 +152,24 @@ metadata:
   ydp.kind: atomic
 ---
 
-Read [note](references/note.md).
+# Ok Skill
+
+## 定位
+
+This fixture skill exists only to verify the validator accepts a minimal but non-empty professional body.
+
+## 输入要求
+
+Provide a short project goal and any optional constraints the agent should respect while testing.
+
+## 输出要求
+
+Write a short markdown note summarizing assumptions. See also [note](references/note.md).
+
+## 质量检查
+
+- Body length exceeds the empty-shell threshold.
+- Local references resolve on disk.
 `,
       "utf8",
     );

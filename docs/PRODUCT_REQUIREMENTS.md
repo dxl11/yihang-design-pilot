@@ -117,3 +117,27 @@
 3. 作为用户，我提供 logo 后，后续页面主色来自 BrandProfile 而非随机。  
 4. 作为用户，我导出的 PPTX 能在 PowerPoint 里改字（在所选模式下）。  
 5. 作为贡献者，我能加一条 quality rule 而不改 Adapter。
+
+---
+
+## 9. 补充：Web Design Skills 产品要求（P2.0 · 叠加，不覆盖上文历史）
+
+> 依据 D-001 Skills-first 与 Prompt 2.0。上文 §1–§8 保留 Prompt 0 引擎视角作为历史需求；**当前实施以 Skills 为准**。
+
+### 9.1 必须有（已交付）
+
+- 独立 Skill：需求分析 Brief、信息架构、视觉方向、设计系统。  
+- 结构化交付：`design-output/01`–`03` + 可选 `design-tokens.json`。  
+- 事实/假设标记；禁止伪造用户研究与未执行的工具结果。  
+- 工作流编排与 planned 依赖诚实标注。  
+- 至少一个贯穿案例 + `pnpm verify`。
+
+### 9.2 必须有（后续，未交付）
+
+- `web-page-design`、响应式专项、设计审查 Skill。  
+- 真实宿主上的端到端页面 HTML 交付验收。
+
+### 9.3 明确不做（持续）
+
+- Agent Runtime / 多 Agent 调度平台 / SaaS / 账户计费。  
+- 把未实现 Skill 标为 available 或建空壳目录。

@@ -11,17 +11,24 @@
 
 | 方式 | 含义 | 示例 |
 |---|---|---|
-| 独立 Skill | 完成一个边界清晰的专业步骤 | `web-visual-direction` |
-| 工作流 Skill | 编排多个独立 Skills | `web-design-workflow`（多数依赖仍为 planned） |
+| 独立 Skill | 完成一个边界清晰的专业步骤 | `web-design-brief` |
+| 工作流 Skill | 编排多个独立 Skills | `web-design-workflow` |
 
 ## 当前可用 Skills
 
-| Skill | 类型 | 状态 |
-|---|---|---|
-| `web-visual-direction` | atomic | **available** |
-| `web-design-workflow` | workflow | **available**（仅方向阶段依赖 available；其余 planned） |
+### Web Design
 
-规划中（未创建空壳）：brand / presentation / 更多 web 原子 Skills。详见 `skills/*/README.md`。
+| Skill | 类型 | 职责 |
+|---|---|---|
+| `web-design-brief` | atomic | 商业目标与设计需求分析 → `01-design-brief.md` |
+| `web-information-architecture` | atomic | 信息架构、Sitemap、导航与用户路径 → `02-information-architecture.md` |
+| `web-visual-direction` | atomic | 视觉方向探索与选定 |
+| `web-design-system` | atomic | Design Tokens、组件与实现规则 → `03-design-system.md` + `design-tokens.json` |
+| `web-design-workflow` | workflow | 编排上述阶段；`web-page-design` 等仍为 **planned** |
+
+规划中（未创建空壳）：`web-page-design` / `web-responsive-design` / `web-design-review`，以及 brand / presentation 品类。详见 `skills/README.md`。
+
+贯穿样例：`examples/web/online-education-site/`。
 
 ## 支持的 Agent
 

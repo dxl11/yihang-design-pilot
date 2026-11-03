@@ -172,6 +172,28 @@ export function validateSkillDirectory(
     });
   }
 
+  if (block.body.trim().length < 200) {
+    issues.push({
+      severity: "error",
+      skillPath: rel,
+      code: "EMPTY_SHELL_SKILL",
+      message: "SKILL.md body is too short to be a professional skill (possible empty shell)",
+    });
+  }
+
+  const lowerBody = block.body.toLowerCase();
+  const hasIoHints =
+    /输入/.test(block.body) &&
+    (/输出/.test(block.body) || /deliverable/i.test(lowerBody));
+  if (!hasIoHints) {
+    issues.push({
+      severity: "warning",
+      skillPath: rel,
+      code: "MISSING_IO_SECTION_HINT",
+      message: "SKILL.md should describe inputs and outputs for handoff clarity",
+    });
+  }
+
   for (const ref of collectLocalReferences(block.body)) {
     const target = path.join(skillDir, ref);
     if (!fs.existsSync(target)) {

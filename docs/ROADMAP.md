@@ -8,10 +8,30 @@
 ## 总览
 
 ```text
-P0 审计规划 → P1 Skills 工程初始化（当前实施） → P2 质检/导出脚本（按需）
-    → P3 更多原子 Skills → P4 宿主安装验证 → P5 开源 v0.1
-    → P6 品牌 Skills → P7 扩展品类
+P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
+    → P2.0 Web Design Skills 第一批（Brief / IA / Design System）← 当前完成待审
+    → P2.1 页面设计等后续 Web Skills（未开始）
+    → 质检/导出脚本与品牌/PPT Skills（按需，见下文历史编号）
 ```
+
+---
+
+## P2.0 — Web Design Skills 第一批（Prompt 2.0）
+
+**目标**：交付真正可独立调用的专业 Web 原子 Skills，而非空壳 Prompt。
+
+| Skill | 状态 |
+|---|---|
+| `web-design-brief` | **已完成** |
+| `web-information-architecture` | **已完成** |
+| `web-design-system` | **已完成** |
+| `web-visual-direction` | 既有；已做交接路径最小更新 |
+| `web-design-workflow` | 既有；依赖状态已更新 |
+| `web-page-design` / `web-responsive-design` / `web-design-review` | **未开始**（禁止空壳） |
+
+验收：`pnpm verify`；`examples/web/online-education-site` 贯穿案例；D-006。
+
+**本阶段不做**：Agent Runtime、设计引擎、SaaS、Huashu 风格全量迁移。
 
 ---
 
@@ -25,7 +45,7 @@ P0 审计规划 → P1 Skills 工程初始化（当前实施） → P2 质检/�
 
 ---
 
-## P1 — Skills 工程初始化（Prompt 1 · 当前）
+## P1 — Skills 工程初始化（Prompt 1 · 已完成）
 
 **目标**：可校验的开源 Skills 仓库骨架。
 
