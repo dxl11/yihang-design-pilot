@@ -63,8 +63,20 @@
 
 - Design Review 负责审查设计；Web Implementation 负责实现；不得擅自推翻已批准设计。  
 - 代码写入**用户项目**；报告写入 `07-web-implementation/`。  
-- Build PASS ≠ 视觉 PASS；Visual Verification 仍为 **planned**。  
-- 勿将未建的 Visual Verification Skill 标为 available。
+- Build PASS ≠ 视觉 PASS；P2.4 Design Fidelity ≠ P2.5 Browser Visual Verification。  
+
+## web implementation → web visual verification（available）
+
+`07-web-implementation` 与可运行页面（或 MODE C 证据）供视觉验证。  
+
+`08-web-visual-verification/<page-id>/visual-verification-report.md` 至少含：Readiness、Tool Mode、Viewport Matrix（追溯 05）、Screenshot Inventory、Load/Layout/Responsive/Interaction/A11y/Visual 分结果、Issue Register、Evidence Index、Final Decision、Limitations。  
+
+- 视口矩阵继承 `05-responsive-design`，不得硬编码冒充设计规定。  
+- MODE：AUTOMATED / BROWSER_ASSISTED / EVIDENCE_ONLY；Playwright 可选。  
+- 工具缺失 → TOOL_NOT_AVAILABLE，**≠** 页面 FAIL；STARTUP_FAILED 独立记录。  
+- 无参考图 → REFERENCE_IMAGE_NOT_AVAILABLE；不得声称设计稿匹配。  
+- 无真实运行 → 不得 Browser/Visual PASS；CASE_DEMO 不得当生产证据。  
+- 复测：FIXED 须有重新验证证据。  
 
 ## page design → HTML 实现（经 web-implementation）
 
@@ -84,10 +96,12 @@
 - 把 HYPOTHESIS 写成已验证用户研究  
 - 将 planned Skill 伪造成已完成交付  
 - 页面设计编造价格/评价并标为事实  
-- 未测试却宣称响应式/WCAG/审查/实现视觉已通过  
+- 未测试却宣称响应式/WCAG/审查/实现/浏览器视觉已通过  
 - 审查无证据却 APPROVED  
 - NEEDS_REVISION 未授权却宣称生产级实现完成  
-- CASE_DEMO 冒充生产部署  
+- CASE_DEMO 冒充生产部署或真实浏览器 PASS  
+- 无参考图却声称设计稿匹配  
+- 工具缺失却判页面视觉 FAIL  
 
 ### Yellow
 
@@ -95,4 +109,5 @@
 - 首屏堆满统计条而无题材锚点  
 - IA 与 Brief 主转化不一致却未记录冲突  
 - 验证页超出 Sitemap 未在 Overview 声明  
-- READY_WITH_GAPS 未写明缺口影响  
+- READY_WITH_GAPS / READY_WITH_LIMITATIONS 未写明缺口影响  
+- 仅桌面截图却暗示全视口已验证  

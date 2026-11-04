@@ -41,6 +41,7 @@ const availableSkills = [
   "web-responsive-design",
   "web-design-review",
   "web-implementation",
+  "web-visual-verification",
   "web-design-workflow",
 ] as const;
 

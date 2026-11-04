@@ -72,6 +72,7 @@ describe("repository skills", () => {
       "web-page-design",
       "web-responsive-design",
       "web-visual-direction",
+      "web-visual-verification",
     ]);
   });
 

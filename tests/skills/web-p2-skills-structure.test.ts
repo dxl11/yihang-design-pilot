@@ -58,9 +58,10 @@ describe("P2 web atomic skills structure", () => {
   it("validator passes for all shipped skills including P2", () => {
     const { results, issues } = validateAllSkills({ rootDir: repoRoot });
     const names = results.map((r) => r.name).filter(Boolean).sort();
-    expect(names).toHaveLength(9);
+    expect(names).toHaveLength(10);
     expect(names).toContain("web-design-review");
     expect(names).toContain("web-implementation");
+    expect(names).toContain("web-visual-verification");
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

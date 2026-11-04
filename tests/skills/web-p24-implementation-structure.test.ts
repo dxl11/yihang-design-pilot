@@ -114,20 +114,18 @@ describe("P2.4 web-implementation skill structure", () => {
     }
   });
 
-  it("workflow v0.6 marks implementation available and visual verification planned", () => {
+  it("workflow marks implementation available with review admission", () => {
     const wf = fs.readFileSync(
       path.join(repoRoot, "skills/web/web-design-workflow/SKILL.md"),
       "utf8",
     );
     const block = extractFrontmatterBlock(wf);
     const fm = YAML.parse(block!.yaml) as { metadata?: Record<string, string> };
-    expect(fm.metadata?.version).toBe("0.6.0");
+    expect(fm.metadata?.version).toMatch(/^0\.[67]\.0$/);
     expect(wf).toMatch(/web-implementation[\s\S]*?\*\*available\*\*/);
     expect(wf).toContain("07-web-implementation");
     expect(wf).toContain("skills/web/web-implementation/SKILL.md");
     expect(wf).toMatch(/NEEDS_REVISION/);
-    expect(wf).toMatch(/视觉验证[\s\S]*?\*\*planned\*\*|Visual Verification[\s\S]*?planned/i);
-    expect(wf).not.toMatch(/视觉验证[\s\S]{0,40}\*\*available\*\*/);
 
     const contracts = fs.readFileSync(
       path.join(repoRoot, "skills/web/web-design-workflow/references/stage-contracts.md"),
@@ -142,7 +140,7 @@ describe("P2.4 web-implementation skill structure", () => {
     const { results, issues } = validateAllSkills({ rootDir: repoRoot });
     const names = results.map((r) => r.name).filter(Boolean).sort();
     expect(names).toContain("web-implementation");
-    expect(names).toHaveLength(9);
+    expect(names).toHaveLength(10);
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

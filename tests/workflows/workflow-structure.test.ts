@@ -31,8 +31,9 @@ describe("web-design-workflow structure", () => {
     expect(content).toMatch(/web-responsive-design[\s\S]*?\*\*available\*\*/);
     expect(content).toMatch(/web-design-review[\s\S]*?\*\*available\*\*/);
     expect(content).toMatch(/web-implementation[\s\S]*?\*\*available\*\*/);
-    expect(content).toMatch(/0\.6\.0/);
-    expect(fm.metadata?.version).toBe("0.6.0");
+    expect(content).toMatch(/web-visual-verification[\s\S]*?\*\*available\*\*/);
+    expect(content).toMatch(/0\.7\.0/);
+    expect(fm.metadata?.version).toBe("0.7.0");
   });
 
   it("ships stage contract reference file", () => {

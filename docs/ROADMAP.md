@@ -13,8 +13,9 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
     → P2.1 web-page-design + 工作流整合
     → P2.2 web-responsive-design + 工作流整合
     → P2.3 web-design-review + 工作流整合
-    → P2.4 web-implementation + 工作流整合 ← 当前完成待审
-    → 后续 Visual Verification（planned）或品牌 PPT Skills（按需）
+    → P2.4 web-implementation + 工作流整合
+    → P2.5 web-visual-verification + 工作流整合 ← 当前完成待审
+    → 后续宿主真实浏览器证据增强或品牌 PPT Skills（按需）
 ```
 
 ---
@@ -86,11 +87,27 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
 |---|---|
 | `web-implementation` | **已完成** |
 | `web-design-workflow` | 阶段 9 → available（v0.6.0）；Visual Verification 仍 planned |
-| Visual Verification | **未开始**（禁止空壳；勿标 Available） |
+| Visual Verification | 当时未开始 → 见 P2.5 |
 
 验收：Project Discovery / Mapping / Fidelity / Verification 规范；Design Review 准入；三页 CASE_DEMO 实施报告（无虚构 build/浏览器 PASS）；结构+案例测试；双语 README；`pnpm verify`；D-010。
 
-**本阶段不做**：P2.5 视觉回归平台、Agent Runtime、SaaS、网站托管。
+**本阶段不做**：Agent Runtime、SaaS、网站托管。（视觉验证见 P2.5）
+
+---
+
+## P2.5 — Web Visual Verification（Prompt 2.5）
+
+**目标**：可复现的浏览器视觉验证方法论 Skill（视口矩阵、截图协议、布局/响应式/交互/基础 a11y、证据与复测）。
+
+| Skill | 状态 |
+|---|---|
+| `web-visual-verification` | **已完成** |
+| `web-design-workflow` | 阶段 10 → available（v0.7.0） |
+| Playwright | **可选**；本仓不强制依赖；辅助脚本可探测 |
+
+验收：MODE A/B/C；视口继承 P2.2；与 P2.4 职责分离；三页 CASE_DEMO（无虚构浏览器 PASS）；可选 capture 脚本 TOOL_NOT_AVAILABLE 路径；结构+案例测试；双语 README；`pnpm verify`；D-011。
+
+**本阶段不做**：云浏览器 SaaS、独立 Playwright Runtime、完整 WCAG 认证平台、Agent Runtime。
 
 ---
 

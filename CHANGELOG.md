@@ -6,6 +6,9 @@
 
 ### Added
 
+- P2.5：原子 Skill `web-visual-verification`（工具模式 A/B/C、视口协议、截图/布局/响应式/交互/基础 a11y、证据与复测 → `08-web-visual-verification/`）。  
+- P2.5：可选辅助脚本 `scripts/web/visual-verify-capture.mjs`（动态探测 Playwright；缺失返回 TOOL_NOT_AVAILABLE；本仓不捆绑依赖）。  
+- P2.5：启航学堂三页视觉验证 CASE_DEMO 报告与结构/案例测试。  
 - P2.4：原子 Skill `web-implementation`（项目发现、设计输入就绪、设计→代码映射、保真度与验证 → `07-web-implementation/`）。  
 - P2.4：启航学堂三页实施报告（CASE_DEMO / NO_PROJECT）与结构/案例测试。  
 - P2.3：原子 Skill `web-design-review`（九维证据审查、严重度、整改与结论 → `06-design-review/`）。  
@@ -30,7 +33,9 @@
 
 ### Changed
 
-- P2.4：`web-design-workflow` v0.6.0 将 `web-implementation` 标为 available；交付目录增加 `07-web-implementation/`；Visual Verification 仍 planned。  
+- P2.5：`web-design-workflow` v0.7.0 将 `web-visual-verification` 标为 available；交付目录增加 `08-web-visual-verification/`。  
+- P2.5：双语 README / ROADMAP / PRD 同步；D-011。  
+- P2.4：`web-design-workflow` v0.6.0 将 `web-implementation` 标为 available；交付目录增加 `07-web-implementation/`。  
 - P2.4：双语 README / ROADMAP / PRD 同步；D-010。  
 - P2.3：`web-design-workflow` v0.5.0 将 `web-design-review` 标为 available；交付目录增加 `06-design-review/`。  
 - P2.3：双语 README / ROADMAP 同步；D-009。  

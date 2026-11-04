@@ -164,4 +164,17 @@
 3. 必含 Project Discovery、Input Readiness（READY / READY_WITH_GAPS / BLOCKED）、Design-to-Code Mapping、Fidelity（MATCHED 等）、Verification 分类型诚实状态。  
 4. Design Review 准入：APPROVED / WITH_NOTES 可正式实现；NEEDS_REVISION 默认阻止（可 RESTRICTED）；BLOCKED 阻止；INSUFFICIENT_EVIDENCE 可规格层实现但呈现 NOT_VERIFIED。  
 5. 仓库案例为 **CASE_DEMO**（NO_PROJECT）；禁止虚构 build/浏览器/部署 PASS；Visual Verification 仍 planned。  
-6. 不开发 Agent Runtime / SaaS / 像素回归平台。
+6. 不开发 Agent Runtime / SaaS / 像素回归平台。（浏览器视觉验证方法论见 **D-011 / P2.5**）
+
+---
+
+## 2026-11-04 · D-011：浏览器视觉验证模式与证据（P2.5）
+
+### 裁定
+
+1. `web-visual-verification` 为独立原子 Skill；P2.4 Design Fidelity ≠ P2.5 Browser Visual Verification。  
+2. 输出：`design-output/08-web-visual-verification/<page-id>/visual-verification-report.md`（21 节）。  
+3. 工具模式：AUTOMATED / BROWSER_ASSISTED / EVIDENCE_ONLY；Playwright **可选**，本仓不强制安装；工具缺失 ≠ 页面 FAIL。  
+4. 视口矩阵继承各页 `05-responsive-design`；缺尺寸标 VIEWPORT_SPEC_MISSING + 假设；禁止硬编码冒充设计规定。  
+5. 无参考图 → REFERENCE_IMAGE_NOT_AVAILABLE；像素 diff 不得单独判设计 FAIL；无浏览器不得 Visual/Browser PASS。  
+6. 仓内案例 CASE_DEMO；可选 `visual-verify-capture.mjs` 仅辅助；不开发云浏览器 SaaS / Agent Runtime。

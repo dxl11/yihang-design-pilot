@@ -92,7 +92,7 @@ describe("P2.3 web-design-review skill structure", () => {
     const names = results.map((r) => r.name).filter(Boolean).sort();
     expect(names).toContain("web-design-review");
     expect(names).toContain("web-implementation");
-    expect(names).toHaveLength(9);
+    expect(names).toHaveLength(10);
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

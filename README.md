@@ -82,11 +82,12 @@
 | `web-responsive-design` | 跨视口布局/导航/组件与验证策略 → `05-responsive-design/` | **Available** |
 | `web-design-review` | 证据驱动设计审查与整改门禁 → `06-design-review/` | **Available** |
 | `web-implementation` | 设计规格 → 用户项目真实网页代码（发现/映射/保真度/验证）→ `07-web-implementation/` | **Available** |
-| `web-design-workflow` | 编排 Brief → … → Review → Implementation | **Available** |
+| `web-visual-verification` | 浏览器视觉验证（视口矩阵/截图/布局与响应式/交互/基础 a11y）→ `08-web-visual-verification/` | **Available** |
+| `web-design-workflow` | 编排 Brief → … → Implementation → Visual Verification | **Available** |
 
 ### Planned（未创建空壳目录）
 
-当前 Web 原子 Skill 无新的 Planned 空壳。后续 **Visual Verification** 须先落地再标 Available（现为 planned，无空壳目录）。
+当前 Web 原子 Skill 无新的 Planned 空壳。Playwright 为**可选**工具，本仓不强制安装；无浏览器时不得宣称真实运行验证已通过。
 
 品牌（Brand）、演示文稿（Presentation）等品类目录仅为规划占位说明，**尚未**提供可用 Skill。
 
@@ -224,6 +225,7 @@ pwsh -File scripts/install/uninstall.ps1 -TargetRoot tests/fixtures/host-compati
     → web-responsive-design     → design-output/05-responsive-design/<page-id>/responsive-design.md
     → web-design-review        → design-output/06-design-review/<page-id>/design-review.md
     → web-implementation       → 用户项目代码 + design-output/07-web-implementation/<page-id>/implementation-report.md
+    → web-visual-verification  → design-output/08-web-visual-verification/<page-id>/visual-verification-report.md
 ```
 
 也可直接调用 `web-design-workflow`，由 Agent **Read** 各阶段 `SKILL.md` 执行（本项目不提供多 Agent Runtime）。
@@ -262,9 +264,13 @@ pwsh -File scripts/install/uninstall.ps1 -TargetRoot tests/fixtures/host-compati
    「请使用 `web-implementation`，在我的前端项目中按 design-output 实现指定页面；先做项目发现与准入检查；优先复用组件与 tokens；跑已有 build/lint；无浏览器则 Visual 标 NOT TESTED；报告写入 `07-web-implementation/`。」  
    → 代码写入**用户项目**；报告写入 `07-web-implementation/<page-id>/implementation-report.md`
 
+9. **视觉验证**  
+   「请使用 `web-visual-verification`，对已实现页面按 `05` 视口矩阵做浏览器验证；优先项目已有 Playwright，否则 MODE B/C；无参考图勿声称设计稿匹配；未跑项标 NOT TESTED。」  
+   → 报告写入 `08-web-visual-verification/<page-id>/visual-verification-report.md`
+
 ### 输出约定
 
-默认建议将设计产物写入**用户项目**下的 `design-output/`，实现代码写入用户前端工程，不要把客户项目产物提交进本 Skills 仓库（仓库内 `examples/` 仅为固定样例；实现案例为 **CASE_DEMO** 报告，非已部署站点）。
+默认建议将设计产物写入**用户项目**下的 `design-output/`，实现代码写入用户前端工程，不要把客户项目产物提交进本 Skills 仓库（仓库内 `examples/` 仅为固定样例；实现与视觉验证案例为 **CASE_DEMO**，非已部署站点、非真实浏览器 PASS）。
 
 ---
 
@@ -294,8 +300,9 @@ docs/             # 规范、审计、兼容性、决策日志
 | P2.2 `web-responsive-design` 与工作流整合 | 已完成 |
 | P2.3 `web-design-review` 与工作流整合 | 已完成 |
 | P2.4 `web-implementation` 与工作流整合 | 已完成 |
+| P2.5 `web-visual-verification` 与工作流整合 | 已完成 |
 
-下一阶段建议：Visual Verification（planned）与更多宿主运行证据。详见 [`docs/ROADMAP.md`](docs/ROADMAP.md)。
+下一阶段建议：更多宿主真实浏览器运行证据与品牌/演示 Skills（按需）。详见 [`docs/ROADMAP.md`](docs/ROADMAP.md)。
 
 ---
 
