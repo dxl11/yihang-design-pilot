@@ -6,6 +6,8 @@
 
 ### Added
 
+- P2.3：原子 Skill `web-design-review`（九维证据审查、严重度、整改与结论 → `06-design-review/`）。  
+- P2.3：启航学堂三页审查案例与结构/案例测试。  
 - P2.2：原子 Skill `web-responsive-design`（视口/断点理由、布局转换、导航与验证 → `05-responsive-design/`）。  
 - P2.2：启航学堂三页响应式案例与结构/案例测试。  
 - P2.1：原子 Skill `web-page-design`（页面结构/布局/交互/内容规格 → `04-page-design/`）。  
@@ -26,7 +28,9 @@
 
 ### Changed
 
-- P2.2：`web-design-workflow` 将 `web-responsive-design` 标为 available；`web-design-review` 仍为 planned；交付目录增加 `05-responsive-design/`。  
+- P2.3：`web-design-workflow` v0.5.0 将 `web-design-review` 标为 available；交付目录增加 `06-design-review/`。  
+- P2.3：双语 README / ROADMAP 同步；D-009。  
+- P2.2：`web-design-workflow` 将 `web-responsive-design` 标为 available；交付目录增加 `05-responsive-design/`。  
 - P2.2：双语 README / ROADMAP 同步；D-008。  
 - P2.1：`web-design-workflow` 将 `web-page-design` 标为 available；交付目录增加 `04-page-design/`。  
 - P2.1：双语 README / ROADMAP / skills 列表同步 Available 状态。  

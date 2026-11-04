@@ -173,7 +173,7 @@ design-output/05-responsive-design/
 | 关系 | Skill |
 |---|---|
 | 上游 | `web-page-design`、`web-design-system`；建议 Brief / IA / Visual |
-| 下游 | `web-design-review`（planned）、实现 |
+| 下游 | `web-design-review`（available）、实现 |
 | 编排 | `web-design-workflow` |
 
 ## 示例

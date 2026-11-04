@@ -64,6 +64,7 @@ describe("repository skills", () => {
     const names = dirs.map((d) => path.basename(d)).sort();
     expect(names).toEqual([
       "web-design-brief",
+      "web-design-review",
       "web-design-system",
       "web-design-workflow",
       "web-information-architecture",

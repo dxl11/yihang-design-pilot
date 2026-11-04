@@ -41,10 +41,6 @@ describe("P2 web atomic skills structure", () => {
     });
   }
 
-  it("does not create empty planned skill shell for design-review", () => {
-    expect(fs.existsSync(path.join(repoRoot, "skills/web/web-design-review"))).toBe(false);
-  });
-
   it("workflow marks P2 skills available including page-design", () => {
     const wf = fs.readFileSync(
       path.join(repoRoot, "skills/web/web-design-workflow/SKILL.md"),
@@ -55,21 +51,15 @@ describe("P2 web atomic skills structure", () => {
     expect(wf).toMatch(/web-design-system[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/web-page-design[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/web-responsive-design[\s\S]*?\*\*available\*\*/);
+    expect(wf).toMatch(/web-design-review[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/并行/);
   });
 
   it("validator passes for all shipped skills including P2", () => {
     const { results, issues } = validateAllSkills({ rootDir: repoRoot });
     const names = results.map((r) => r.name).filter(Boolean).sort();
-    expect(names).toEqual([
-      "web-design-brief",
-      "web-design-system",
-      "web-design-workflow",
-      "web-information-architecture",
-      "web-page-design",
-      "web-responsive-design",
-      "web-visual-direction",
-    ]);
+    expect(names).toHaveLength(8);
+    expect(names).toContain("web-design-review");
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

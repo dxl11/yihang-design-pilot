@@ -43,17 +43,13 @@ describe("P2.2 web-responsive-design skill structure", () => {
     }
   });
 
-  it("does not create design-review shell", () => {
-    expect(fs.existsSync(path.join(repoRoot, "skills/web/web-design-review"))).toBe(false);
-  });
-
-  it("workflow marks responsive available and review planned", () => {
+  it("workflow marks responsive and review available", () => {
     const wf = fs.readFileSync(
       path.join(repoRoot, "skills/web/web-design-workflow/SKILL.md"),
       "utf8",
     );
     expect(wf).toMatch(/web-responsive-design[\s\S]*?\*\*available\*\*/);
-    expect(wf).toMatch(/web-design-review[\s\S]*?\*\*planned\*\*/);
+    expect(wf).toMatch(/web-design-review[\s\S]*?\*\*available\*\*/);
     expect(wf).toContain("05-responsive-design");
     expect(wf).toContain("skills/web/web-responsive-design/SKILL.md");
   });
@@ -62,15 +58,7 @@ describe("P2.2 web-responsive-design skill structure", () => {
     const { results, issues } = validateAllSkills({ rootDir: repoRoot });
     const names = results.map((r) => r.name).filter(Boolean).sort();
     expect(names).toContain("web-responsive-design");
-    expect(names).toEqual([
-      "web-design-brief",
-      "web-design-system",
-      "web-design-workflow",
-      "web-information-architecture",
-      "web-page-design",
-      "web-responsive-design",
-      "web-visual-direction",
-    ]);
+    expect(names).toContain("web-design-review");
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

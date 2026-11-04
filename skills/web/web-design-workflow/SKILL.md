@@ -8,14 +8,14 @@ description: >-
   workflow.
 metadata:
   ydp.kind: workflow
-  version: "0.4.0"
+  version: "0.5.0"
 ---
 
 # Web Design Workflow
 
 ## 定位
 
-把多个专业 Skills **按阶段编排**，完成营销向网站 / 落地页从需求到页面规格（及后续实现/审查）的设计流程。
+把多个专业 Skills **按阶段编排**，完成营销向网站 / 落地页从需求到页面规格、响应式与**设计审查**的流程。
 
 本 Skill **不是** Agent Runtime。宿主若不能自动调用其他 Skills，必须 **Read** 对应 `SKILL.md` 并按阶段执行。
 
@@ -51,12 +51,12 @@ metadata:
 | 5 | 设计系统 | `web-design-system` | **available** | 否（大改品牌时建议确认） |
 | 6 | 页面设计 | `web-page-design` | **available** | 建议确认主转化文案与关键页范围 |
 | 7 | 响应式 | `web-responsive-design` | **available** | 建议确认主转化在窄屏仍可达 |
-| 8 | 质量审查 | `web-design-review` | **planned** | 否 |
+| 8 | 质量审查 | `web-design-review` | **available** | 是（定稿/开发前建议确认结论） |
 | 9 | 修改迭代 | （回到 6–8 或 4–5） | — | 视红线 |
 | 10 | 最终交付 | （本工作流收口） | — | 是 |
 
 **并行**：阶段 2 与 4 可在 Brief 后并行；若并行，方向样例页应在 IA 定稿后复核。  
-**顺序约束**：阶段 5 需要阶段 4 的批准（或显式跳过记录）；阶段 6 强烈建议已有阶段 1、4、5（及建议 2）；阶段 7 强烈建议已有阶段 6 与 5。
+**顺序约束**：阶段 5 需要阶段 4 的批准（或显式跳过记录）；阶段 6 强烈建议已有阶段 1、4、5（及建议 2）；阶段 7 强烈建议已有阶段 6 与 5；阶段 8 强烈建议已有阶段 6–7。
 
 Available 路径：
 
@@ -66,6 +66,7 @@ Available 路径：
 - `skills/web/web-design-system/SKILL.md`  
 - `skills/web/web-page-design/SKILL.md`  
 - `skills/web/web-responsive-design/SKILL.md`  
+- `skills/web/web-design-review/SKILL.md`  
 
 ## 默认交付目录
 
@@ -84,6 +85,9 @@ design-output/
   05-responsive-design/
     _index.md
     <page-id>/responsive-design.md
+  06-design-review/
+    _index.md
+    <page-id>/design-review.md
 ```
 
 ## 阶段详情
@@ -137,18 +141,23 @@ design-output/
 - **确认**：建议确认窄屏主 CTA 策略；**不**代替 Design Review；无浏览器跑测须标 NOT TESTED。  
 - **回退**：响应式与页面结构冲突时回阶段 6（或 5 若 token 不足）。
 
-### 8 — 质量审查（planned）
+### 8 — 质量审查（available）
 
-- Fallback：[stage-contracts.md](references/stage-contracts.md)；红灯不得交付。
+- **调用**：Read `skills/web/web-design-review/SKILL.md` 全文执行。  
+- **输入**：Brief/IA/方向/系统/tokens、page-design、responsive；可选截图与浏览器/a11y 记录。  
+- **输出**：`design-output/06-design-review/<page-id>/design-review.md`（及可选 `_index.md`）。  
+- **缺失证据**：相关维度标 NOT TESTED；不得无证宣称 Visual/交互运行 PASS。  
+- **确认**：结论为 BLOCKED / NEEDS_REVISION / INSUFFICIENT_EVIDENCE 时须向用户展示；APPROVED 须有足够证据。  
+- **回退**：按 Recommended Actions 回阶段 6–7（或更早）。
 
 ### 9 — 迭代
 
-- 优先修审查项、响应式与页面规格；无确认不重开三方向。  
-- 同红灯连续 3 次：升级询问用户。
+- 优先按审查 Issue 修订页面/响应式规格；无确认不重开三方向。  
+- 同 CRITICAL/红灯连续 3 次：升级询问用户。
 
 ### 10 — 最终交付
 
-清单：Brief / IA / 方向批准 / 设计系统 / 页面规格 / 响应式规格 /（未来）审查报告；列出仍为 planned 的 Skill（含 `web-design-review`）。
+清单：Brief / IA / 方向批准 / 设计系统 / 页面规格 / 响应式规格 / 审查报告；无 Web Implementation Skill（勿标 available）。
 
 ## 宿主兼容执行方式
 
@@ -158,10 +167,11 @@ design-output/
 
 ## 质量检查（工作流级）
 
-- [ ] Brief / IA / 方向 / 系统 / 页面 / 响应式状态与上表一致（无把 planned 标成完成）  
+- [ ] Brief / IA / 方向 / 系统 / 页面 / 响应式 / 审查状态与上表一致  
 - [ ] 视觉确认节点已满足  
 - [ ] `design-output/` 文件可互相对照  
-- [ ] 未跑浏览器却宣称响应式「已验证通过」→ 红灯  
+- [ ] 未跑浏览器却宣称响应式或审查「已验证通过」→ 红灯  
+- [ ] 审查结论与 CRITICAL / 证据覆盖一致  
 - [ ] 未关闭红灯不宣称完成  
 
 ## 失败处理
@@ -171,4 +181,4 @@ design-output/
 | 拒绝所有方向 | 回阶段 4 换骨架 |
 | Brief 与 IA 冲突 | 停，先修订 Brief 或 IA |
 | 页面规格与系统冲突 | 回阶段 5 或 6；禁止页面私自另起全局 token |
-| 无工具截图 / 未跑浏览器 | 响应式文档标 NOT TESTED，不假装验收通过 |
+| 无工具截图 / 未跑浏览器 | 响应式与审查相关项标 NOT TESTED；审查结论勿 APPROVED 充数 |

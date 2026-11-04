@@ -39,10 +39,18 @@
 `05-responsive-design/<page-id>/responsive-design.md` 至少含：视口/断点理由、布局转换、内容优先级、导航与组件、交互、验证清单（含 NOT TESTED）。  
 无 page-design 不得定稿响应式。未跑浏览器不得宣称「已验证通过」。
 
-## responsive → review（planned） / 实现
+## responsive → design review（available）
 
-- 响应式规格可指导实现与审查  
-- Review 仍为 planned；Fallback 见本文件红黄灯  
+`05-responsive-design/<page-id>/responsive-design.md` 供审查对照跨屏意图。  
+
+`06-design-review/<page-id>/design-review.md` 至少含：Evidence Coverage、九维状态、Issue（含严重度与整改）、Overall Result、Unverified Items。  
+
+无截图不得 Visual 呈现 PASS；无浏览器不得交互/响应式运行 PASS；CRITICAL 确证不得 APPROVED。
+
+## review → 实现（无独立 Implementation Skill）
+
+- 按审查 Acceptance Criteria 与 Issue 整改后再实现  
+- 勿将「未建的 Web Implementation Skill」标为 available  
 
 ## page design → HTML 实现（非本仓库 Skill）
 
@@ -61,7 +69,8 @@
 - 把 HYPOTHESIS 写成已验证用户研究  
 - 将 planned Skill 伪造成已完成交付  
 - 页面设计编造价格/评价并标为事实  
-- 未测试却宣称响应式/WCAG 已通过  
+- 未测试却宣称响应式/WCAG/审查已通过  
+- 审查无证据却 APPROVED  
 
 ### Yellow
 

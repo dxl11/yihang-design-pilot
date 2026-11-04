@@ -80,13 +80,12 @@
 | `web-design-system` | Design Tokens、组件与实现规则 → `03-design-system.md` + `design-tokens.json` | **Available** |
 | `web-page-design` | 页面级结构/布局/交互/内容规格 → `04-page-design/` | **Available** |
 | `web-responsive-design` | 跨视口布局/导航/组件与验证策略 → `05-responsive-design/` | **Available** |
-| `web-design-workflow` | 编排 Brief → IA ∥ Visual → System → Page → Responsive →（审查） | **Available**（Design Review 仍为 Planned） |
+| `web-design-review` | 证据驱动设计审查与整改门禁 → `06-design-review/` | **Available** |
+| `web-design-workflow` | 编排 Brief → … → Page → Responsive → Design Review | **Available** |
 
 ### Planned（未创建空壳目录）
 
-| Skill | 说明 | 状态 |
-|---|---|---|
-| `web-design-review` | 设计质量审查 | **Planned** |
+当前 Web 原子 Skill 无新的 Planned 空壳。后续若增 Web Implementation / Visual Verification，须先落地再标 Available。
 
 品牌（Brand）、演示文稿（Presentation）等品类目录仅为规划占位说明，**尚未**提供可用 Skill。
 
@@ -222,7 +221,7 @@ pwsh -File scripts/install/uninstall.ps1 -TargetRoot tests/fixtures/host-compati
     → web-design-system         → design-output/03-design-system.md + design-tokens.json
     → web-page-design           → design-output/04-page-design/<page-id>/page-design.md
     → web-responsive-design     → design-output/05-responsive-design/<page-id>/responsive-design.md
-    → web-design-review        （Planned）
+    → web-design-review        → design-output/06-design-review/<page-id>/design-review.md
 ```
 
 也可直接调用 `web-design-workflow`，由 Agent **Read** 各阶段 `SKILL.md` 执行（本项目不提供多 Agent Runtime）。
@@ -252,6 +251,10 @@ pwsh -File scripts/install/uninstall.ps1 -TargetRoot tests/fixtures/host-compati
 6. **响应式设计**  
    「请使用 `web-responsive-design`，基于 page-design 与 tokens 制定断点理由、布局转换与移动导航；未跑浏览器须标 NOT TESTED。」  
    → 产出 `05-responsive-design/<page-id>/responsive-design.md`
+
+7. **设计审查**  
+   「请使用 `web-design-review`，对首页等做九维证据审查；无截图勿标视觉 PASS；给出严重度与整改。」  
+   → 产出 `06-design-review/<page-id>/design-review.md`
 
 ### 输出约定
 
@@ -283,9 +286,9 @@ docs/             # 规范、审计、兼容性、决策日志
 | P2.0 Web Design 第一批（Brief / IA / Design System） | 已完成 |
 | P2.1 `web-page-design` 与工作流整合 | 已完成 |
 | P2.2 `web-responsive-design` 与工作流整合 | 已完成 |
-| P2.3 `web-design-review` | **未开始** |
+| P2.3 `web-design-review` 与工作流整合 | 已完成 |
 
-下一阶段建议：设计审查 Skill；并在更多宿主上补充真实运行证据。详见 [`docs/ROADMAP.md`](docs/ROADMAP.md)。
+下一阶段建议：实现层/视觉验证能力（若需要）与宿主运行证据。详见 [`docs/ROADMAP.md`](docs/ROADMAP.md)。
 
 ---
 

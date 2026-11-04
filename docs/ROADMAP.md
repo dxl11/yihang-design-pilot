@@ -11,9 +11,9 @@
 P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
     → P2.0 Web Design Skills 第一批（Brief / IA / Design System）
     → P2.1 web-page-design + 工作流整合
-    → P2.2 web-responsive-design + 工作流整合 ← 当前完成待审
-    → P2.3 web-design-review（未开始）
-    → 质检/导出脚本与品牌/PPT Skills（按需，见下文历史编号）
+    → P2.2 web-responsive-design + 工作流整合
+    → P2.3 web-design-review + 工作流整合 ← 当前完成待审
+    → 后续实现/视觉验证或品牌 PPT Skills（按需）
 ```
 
 ---
@@ -58,9 +58,22 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
 |---|---|
 | `web-responsive-design` | **已完成** |
 | `web-design-workflow` | 阶段 7 → available |
-| `web-design-review` | **未开始**（禁止空壳） |
+| `web-design-review` | 当时未开始 → 见 P2.3 |
 
 验收：三页差异化响应式案例；NOT TESTED 诚实标记；`pnpm verify`；D-008。
+
+---
+
+## P2.3 — Web Design Review（Prompt 2.3）
+
+**目标**：证据驱动的设计质量审查 Skill（九维、严重度、整改、结论）。
+
+| Skill | 状态 |
+|---|---|
+| `web-design-review` | **已完成** |
+| `web-design-workflow` | 阶段 8 → available（v0.5.0） |
+
+验收：三页审查案例；无截图不 Visual PASS；CASE_DEMO 明示；`pnpm verify`；D-009。
 
 ---
 

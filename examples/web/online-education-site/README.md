@@ -1,6 +1,6 @@
 # 案例：启航学堂（在线教育品牌官网 · 从 0 建设）
 
-贯穿验证：`web-design-brief` → `web-information-architecture` →（并行）`web-visual-direction` → `web-design-system` → `web-page-design` → `web-responsive-design`。
+贯穿验证：`web-design-brief` → `web-information-architecture` →（并行）`web-visual-direction` → `web-design-system` → `web-page-design` → `web-responsive-design` → `web-design-review`。
 
 本目录为**仓库内固定样例交付物**，供自动化测试与人工审阅。Agent 在真实项目中应写到用户项目的 `design-output/`，而不是改本仓库样例。
 
@@ -33,6 +33,9 @@ design-output/
   05-responsive-design/
     _index.md
     home|course-detail|pricing/responsive-design.md
+  06-design-review/
+    _index.md
+    home|course-detail|pricing/design-review.md
 ```
 
 ## 如何复现（人工）
@@ -42,4 +45,5 @@ design-output/
 3. Read `web-visual-direction`，产出三方向后选定（样例已选定方向 B）。  
 4. Read `web-design-system`，以 Brief + IA + 批准方向生成系统与 tokens。  
 5. Read `web-page-design`，设计首页、课程详情与价格策略页（定价未定 → 咨询导向，不编造标价）。  
-6. Read `web-responsive-design`，基于 page-design 输出三页响应式规格（未跑浏览器标 NOT TESTED）。
+6. Read `web-responsive-design`，基于 page-design 输出三页响应式规格（未跑浏览器标 NOT TESTED）。  
+7. Read `web-design-review`，九维证据审查；无截图勿 Visual PASS；CASE_DEMO 仅作教学。

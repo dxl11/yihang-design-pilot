@@ -44,18 +44,14 @@ describe("P2.1 web-page-design skill structure", () => {
     }
   });
 
-  it("does not create shell for design-review", () => {
-    expect(fs.existsSync(path.join(repoRoot, "skills/web/web-design-review"))).toBe(false);
-  });
-
-  it("workflow marks page-design available and review planned", () => {
+  it("workflow marks page-design and review available", () => {
     const wf = fs.readFileSync(
       path.join(repoRoot, "skills/web/web-design-workflow/SKILL.md"),
       "utf8",
     );
     expect(wf).toMatch(/web-page-design[\s\S]*?\*\*available\*\*/);
     expect(wf).toMatch(/web-responsive-design[\s\S]*?\*\*available\*\*/);
-    expect(wf).toMatch(/web-design-review[\s\S]*?\*\*planned\*\*/);
+    expect(wf).toMatch(/web-design-review[\s\S]*?\*\*available\*\*/);
     expect(wf).toContain("04-page-design");
     expect(wf).toContain("skills/web/web-page-design/SKILL.md");
   });
@@ -64,7 +60,7 @@ describe("P2.1 web-page-design skill structure", () => {
     const { results, issues } = validateAllSkills({ rootDir: repoRoot });
     const names = results.map((r) => r.name).filter(Boolean).sort();
     expect(names).toContain("web-page-design");
-    expect(names).toContain("web-responsive-design");
+    expect(names).toContain("web-design-review");
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

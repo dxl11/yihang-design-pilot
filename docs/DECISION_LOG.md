@@ -138,4 +138,17 @@
 3. 输出：`design-output/05-responsive-design/<page-id>/responsive-design.md`（14 节）。  
 4. 未跑浏览器/工具时必须标 **NOT TESTED**；禁止宣称 WCAG 已认证或真机已通过。  
 5. 窄屏不得静默删除决策信息（定价权益、适合/不适合等）；可折叠或改布局。  
-6. `web-design-review` 仍 planned，不建空壳。
+6. （历史）当时 `web-design-review` 仍 planned；审查已由 **D-009 / P2.3** 交付。
+
+---
+
+## 2026-11-04 · D-009：设计审查 Evidence 与结论（P2.3）
+
+### 裁定
+
+1. `web-design-review` 为独立原子 Skill；Workflow 只编排，不替代方法论。  
+2. 输出：`design-output/06-design-review/<page-id>/design-review.md`（12 节）。  
+3. Evidence Model 强制区分规格意图 vs 截图呈现 vs 浏览器行为；缺证 → `NOT TESTED`。  
+4. 结论集：`APPROVED` | `APPROVED_WITH_NOTES` | `NEEDS_REVISION` | `BLOCKED` | `INSUFFICIENT_EVIDENCE`；CRITICAL 确证不得 APPROVED。  
+5. 仓库案例可用 `CASE_DEMO` Issue 演示写法，不得伪装为线上实测。  
+6. 不开发 Agent Runtime / Implementation Skill 空壳。
