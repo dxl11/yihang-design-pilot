@@ -1,6 +1,6 @@
 # 案例：启航学堂（在线教育品牌官网 · 从 0 建设）
 
-贯穿验证：`web-design-brief` → `web-information-architecture` →（并行）`web-visual-direction` → `web-design-system` → `web-page-design` → `web-responsive-design` → `web-design-review`。
+贯穿验证：`web-design-brief` → `web-information-architecture` →（并行）`web-visual-direction` → `web-design-system` → `web-page-design` → `web-responsive-design` → `web-design-review` → `web-implementation`（CASE_DEMO 报告）。
 
 本目录为**仓库内固定样例交付物**，供自动化测试与人工审阅。Agent 在真实项目中应写到用户项目的 `design-output/`，而不是改本仓库样例。
 
@@ -36,6 +36,9 @@ design-output/
   06-design-review/
     _index.md
     home|course-detail|pricing/design-review.md
+  07-web-implementation/
+    _index.md
+    home|course-detail|pricing/implementation-report.md
 ```
 
 ## 如何复现（人工）
@@ -46,4 +49,5 @@ design-output/
 4. Read `web-design-system`，以 Brief + IA + 批准方向生成系统与 tokens。  
 5. Read `web-page-design`，设计首页、课程详情与价格策略页（定价未定 → 咨询导向，不编造标价）。  
 6. Read `web-responsive-design`，基于 page-design 输出三页响应式规格（未跑浏览器标 NOT TESTED）。  
-7. Read `web-design-review`，九维证据审查；无截图勿 Visual PASS；CASE_DEMO 仅作教学。
+7. Read `web-design-review`，九维证据审查；无截图勿 Visual PASS；CASE_DEMO 仅作教学。  
+8. Read `web-implementation`：本仓无前端工程 → 仅 CASE_DEMO 实施报告（NO_PROJECT / NO_CODE_CHANGES）；勿虚构 build 或浏览器 PASS。

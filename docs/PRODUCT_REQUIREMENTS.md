@@ -126,16 +126,16 @@
 
 ### 9.1 必须有（已交付）
 
-- 独立 Skill：Brief、IA、视觉方向、设计系统、页面设计、响应式、**设计审查**。  
-- 结构化交付：`01`–`03`、`04-page-design/`、`05-responsive-design/`、`06-design-review/` + tokens。  
-- 事实/假设标记；禁止伪造用户研究与未执行的工具/浏览器/审查通过结果。  
-- 工作流编排与状态诚实标注。  
-- 贯穿案例（页面规格 + 响应式 + 审查）+ `pnpm verify`。
+- 独立 Skill：Brief、IA、视觉方向、设计系统、页面设计、响应式、设计审查、**网页实现**。  
+- 结构化交付：`01`–`03`、`04-page-design/`、`05-responsive-design/`、`06-design-review/`、`07-web-implementation/` + tokens。  
+- 事实/假设标记；禁止伪造用户研究与未执行的工具/浏览器/审查/实现通过结果。  
+- 工作流编排与状态诚实标注；实现遵守项目发现与代码保护。  
+- 贯穿案例（页面规格 + 响应式 + 审查 + 实施报告 CASE_DEMO）+ `pnpm verify`。
 
 ### 9.2 必须有（后续，未交付）
 
-- 真实宿主上的端到端页面 HTML 交付验收。  
-- 可选 Visual Verification / Implementation 类 Skill（若立项）。
+- 真实用户前端工程上的端到端 HTML 交付与运行验收（超出本仓 CASE_DEMO）。  
+- Visual Verification 类 Skill（若立项；现 planned）。
 
 ### 9.3 明确不做（持续）
 

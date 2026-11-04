@@ -3,32 +3,33 @@ name: web-design-workflow
 description: >-
   Orchestrates an end-to-end marketing website design workflow across brief, IA,
   brand read, visual direction, design system, page design, responsive checks,
-  and review. Use when the user wants a full website or landing-page design
-  process rather than a single atomic step, or asks to run the web design
-  workflow.
+  design review, and web implementation. Use when the user wants a full website
+  or landing-page design-to-code process rather than a single atomic step, or
+  asks to run the web design workflow.
 metadata:
   ydp.kind: workflow
-  version: "0.5.0"
+  version: "0.6.0"
 ---
 
 # Web Design Workflow
 
 ## 定位
 
-把多个专业 Skills **按阶段编排**，完成营销向网站 / 落地页从需求到页面规格、响应式与**设计审查**的流程。
+把多个专业 Skills **按阶段编排**，完成营销向网站 / 落地页从需求到页面规格、响应式、设计审查与**网页实现**的流程。
 
 本 Skill **不是** Agent Runtime。宿主若不能自动调用其他 Skills，必须 **Read** 对应 `SKILL.md` 并按阶段执行。
 
 ## 触发场景
 
-- 「按完整流程做官网 / 落地页」。  
-- 需要确认节点（尤其是视觉方向与 IA）。  
+- 「按完整流程做官网 / 落地页（含实现）」。  
+- 需要确认节点（尤其是视觉方向、IA、审查结论与实现范围）。  
 
 ## 不适用场景
 
 - 只改一页颜色或文案。  
-- 生产级 Web App 工程。  
-- PPT / 品牌全书。
+- 生产级 Web App 全栈业务重写。  
+- PPT / 品牌全书。  
+- 像素级视觉回归平台（属未来 Visual Verification）。
 
 ## 输入要求
 
@@ -39,6 +40,7 @@ metadata:
 | 主要页面范围或「只要落地页」 | 是 | |
 | 品牌资产 | 否 | |
 | 是否跳过三方向 | 否 | 须用户明示并记录 |
+| 用户前端项目路径（进入实现时） | 实现阶段建议 | 无项目则仅计划 / CASE_DEMO |
 
 ## 阶段总览
 
@@ -52,11 +54,13 @@ metadata:
 | 6 | 页面设计 | `web-page-design` | **available** | 建议确认主转化文案与关键页范围 |
 | 7 | 响应式 | `web-responsive-design` | **available** | 建议确认主转化在窄屏仍可达 |
 | 8 | 质量审查 | `web-design-review` | **available** | 是（定稿/开发前建议确认结论） |
-| 9 | 修改迭代 | （回到 6–8 或 4–5） | — | 视红线 |
-| 10 | 最终交付 | （本工作流收口） | — | 是 |
+| 9 | 网页实现 | `web-implementation` | **available** | 是（范围、项目路径、受限实现授权） |
+| 10 | 修改迭代 | （回到 6–9 或 4–5） | — | 视红线 |
+| 11 | 最终交付 | （本工作流收口） | — | 是 |
+| — | 视觉验证 | （未来 Skill） | **planned** | — |
 
 **并行**：阶段 2 与 4 可在 Brief 后并行；若并行，方向样例页应在 IA 定稿后复核。  
-**顺序约束**：阶段 5 需要阶段 4 的批准（或显式跳过记录）；阶段 6 强烈建议已有阶段 1、4、5（及建议 2）；阶段 7 强烈建议已有阶段 6 与 5；阶段 8 强烈建议已有阶段 6–7。
+**顺序约束**：阶段 5 需要阶段 4 的批准（或显式跳过记录）；阶段 6 强烈建议已有阶段 1、4、5（及建议 2）；阶段 7 强烈建议已有阶段 6 与 5；阶段 8 强烈建议已有阶段 6–7；阶段 9 强烈建议已有阶段 6–8，并遵守审查准入。
 
 Available 路径：
 
@@ -67,6 +71,9 @@ Available 路径：
 - `skills/web/web-page-design/SKILL.md`  
 - `skills/web/web-responsive-design/SKILL.md`  
 - `skills/web/web-design-review/SKILL.md`  
+- `skills/web/web-implementation/SKILL.md`  
+
+**Planned（未建空壳）**：Visual Verification；勿标 Available。
 
 ## 默认交付目录
 
@@ -88,7 +95,12 @@ design-output/
   06-design-review/
     _index.md
     <page-id>/design-review.md
+  07-web-implementation/
+    _index.md
+    <page-id>/implementation-report.md
 ```
+
+**代码**写入用户前端项目，不默认放入 `design-output/`。
 
 ## 阶段详情
 
@@ -150,14 +162,29 @@ design-output/
 - **确认**：结论为 BLOCKED / NEEDS_REVISION / INSUFFICIENT_EVIDENCE 时须向用户展示；APPROVED 须有足够证据。  
 - **回退**：按 Recommended Actions 回阶段 6–7（或更早）。
 
-### 9 — 迭代
+### 9 — 网页实现（available）
 
-- 优先按审查 Issue 修订页面/响应式规格；无确认不重开三方向。  
+- **调用**：Read `skills/web/web-implementation/SKILL.md` 全文执行。  
+- **输入**：用户项目路径、页面范围、`01`–`06` 设计产物；用户技术约束。  
+- **输出**：用户项目中的代码 + `design-output/07-web-implementation/<page-id>/implementation-report.md`。  
+- **准入**：  
+  - `APPROVED` → 可正式实现  
+  - `APPROVED_WITH_NOTES` → 可实现，NOTES 进 Pending  
+  - `NEEDS_REVISION` → 默认阻止正式实现；用户明示原型/局部 → `RESTRICTED`  
+  - `BLOCKED` → 阻止相关范围  
+  - `INSUFFICIENT_EVIDENCE` → 规格足够部分可实现；视觉/运行验证 `NOT_VERIFIED`  
+- **职责边界**：Review 审设计；Implementation 忠实实现；不得擅自推翻已批准设计；视觉回归属 **planned** Visual Verification。  
+- **确认**：实现范围、项目路径、是否授权受限实现、高影响配置改动。  
+- **回退**：保真度/构建失败按报告回 6–8 或修代码。
+
+### 10 — 迭代
+
+- 优先按审查 Issue 与实现偏差修订；无确认不重开三方向。  
 - 同 CRITICAL/红灯连续 3 次：升级询问用户。
 
-### 10 — 最终交付
+### 11 — 最终交付
 
-清单：Brief / IA / 方向批准 / 设计系统 / 页面规格 / 响应式规格 / 审查报告；无 Web Implementation Skill（勿标 available）。
+清单：Brief / IA / 方向批准 / 设计系统 / 页面规格 / 响应式规格 / 审查报告 / 实施报告（及用户项目代码若有）；**不含**未交付的 Visual Verification。
 
 ## 宿主兼容执行方式
 
@@ -167,11 +194,12 @@ design-output/
 
 ## 质量检查（工作流级）
 
-- [ ] Brief / IA / 方向 / 系统 / 页面 / 响应式 / 审查状态与上表一致  
+- [ ] Brief / IA / 方向 / 系统 / 页面 / 响应式 / 审查 / 实现状态与上表一致  
 - [ ] 视觉确认节点已满足  
 - [ ] `design-output/` 文件可互相对照  
-- [ ] 未跑浏览器却宣称响应式或审查「已验证通过」→ 红灯  
-- [ ] 审查结论与 CRITICAL / 证据覆盖一致  
+- [ ] 未跑浏览器却宣称响应式、审查或实现「视觉已验证通过」→ 红灯  
+- [ ] 审查结论与实现准入一致  
+- [ ] Visual Verification 仍为 planned，未标 available  
 - [ ] 未关闭红灯不宣称完成  
 
 ## 失败处理
@@ -182,3 +210,5 @@ design-output/
 | Brief 与 IA 冲突 | 停，先修订 Brief 或 IA |
 | 页面规格与系统冲突 | 回阶段 5 或 6；禁止页面私自另起全局 token |
 | 无工具截图 / 未跑浏览器 | 响应式与审查相关项标 NOT TESTED；审查结论勿 APPROVED 充数 |
+| 实现缺项目 / 缺后端 | 标 NO_PROJECT / BACKEND_REQUIRED；不伪造 PASS |
+| Review 未过且未授权受限实现 | 不进入正式阶段 9 |

@@ -67,6 +67,7 @@ describe("repository skills", () => {
       "web-design-review",
       "web-design-system",
       "web-design-workflow",
+      "web-implementation",
       "web-information-architecture",
       "web-page-design",
       "web-responsive-design",

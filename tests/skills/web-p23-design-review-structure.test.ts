@@ -91,7 +91,8 @@ describe("P2.3 web-design-review skill structure", () => {
     const { results, issues } = validateAllSkills({ rootDir: repoRoot });
     const names = results.map((r) => r.name).filter(Boolean).sort();
     expect(names).toContain("web-design-review");
-    expect(names).toHaveLength(8);
+    expect(names).toContain("web-implementation");
+    expect(names).toHaveLength(9);
     expect(issues.filter((i) => i.severity === "error")).toEqual([]);
   });
 });

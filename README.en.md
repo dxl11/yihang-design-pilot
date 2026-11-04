@@ -81,11 +81,12 @@ Authoritative source: `skills/`. Status must match each Skill / Workflow `SKILL.
 | `web-page-design` | Page-level structure, layout, interaction, and content specs → `04-page-design/` | **Available** |
 | `web-responsive-design` | Cross-viewport layout, navigation, components, and validation → `05-responsive-design/` | **Available** |
 | `web-design-review` | Evidence-driven design review and remediation gate → `06-design-review/` | **Available** |
-| `web-design-workflow` | Orchestrates Brief → … → Page → Responsive → Design Review | **Available** |
+| `web-implementation` | Design specs → real page code in the user’s project (discovery / mapping / fidelity / verify) → `07-web-implementation/` | **Available** |
+| `web-design-workflow` | Orchestrates Brief → … → Review → Implementation | **Available** |
 
 ### Planned (no empty Skill directories)
 
-No new Planned empty shells for Web atomic Skills. Future Web Implementation / Visual Verification must ship before being marked Available.
+No new Planned empty shells for Web atomic Skills. Future **Visual Verification** must ship before being marked Available (currently planned; no empty directory).
 
 Brand and Presentation domains are planning placeholders only—**no** Available Skills yet.
 
@@ -222,6 +223,7 @@ Raw project materials
     → web-page-design                  → design-output/04-page-design/<page-id>/page-design.md
     → web-responsive-design            → design-output/05-responsive-design/<page-id>/responsive-design.md
     → web-design-review               → design-output/06-design-review/<page-id>/design-review.md
+    → web-implementation              → user project code + design-output/07-web-implementation/<page-id>/implementation-report.md
 ```
 
 You may also invoke `web-design-workflow`; the agent should **Read** each stage `SKILL.md` (this repo does not ship a multi-agent Runtime).
@@ -234,11 +236,12 @@ You may also invoke `web-design-workflow`; the agent should **Read** each stage 
 4. **Design System** — “Use `web-design-system` with Brief, IA, and the approved direction.” → `03-design-system.md` + valid `design-tokens.json`  
 5. **Page Design** — “Use `web-page-design` for Home (and course detail / pricing strategy pages); differentiate page types; inherit tokens; do not invent prices or reviews.” → `04-page-design/<page-id>/page-design.md`  
 6. **Responsive Design** — “Use `web-responsive-design` on page-design + tokens for breakpoint rationale, layout transforms, and mobile nav; mark NOT TESTED if browsers were not run.” → `05-responsive-design/<page-id>/responsive-design.md`  
-7. **Design Review** — “Use `web-design-review` for a nine-dimension evidence review; do not mark Visual PASS without screenshots; include severity and remediation.” → `06-design-review/<page-id>/design-review.md`
+7. **Design Review** — “Use `web-design-review` for a nine-dimension evidence review; do not mark Visual PASS without screenshots; include severity and remediation.” → `06-design-review/<page-id>/design-review.md`  
+8. **Web Implementation** — “Use `web-implementation` in my frontend repo against design-output; run project discovery and review admission; reuse components/tokens; run existing build/lint; mark Visual NOT TESTED without a browser; write the report under `07-web-implementation/`.” → code in the **user project**; report at `07-web-implementation/<page-id>/implementation-report.md`
 
 ### Output convention
 
-Prefer writing into the **user project** `design-output/` folder. Do not commit client deliverables into this Skills repository (`examples/` holds fixed samples only).
+Prefer writing design artifacts into the **user project** `design-output/` folder and implementation code into the user’s frontend app. Do not commit client deliverables into this Skills repository (`examples/` holds fixed samples only; implementation samples are **CASE_DEMO** reports, not a deployed site).
 
 ---
 
@@ -267,8 +270,9 @@ docs/             # Guides, audits, compatibility, decision log
 | P2.1 `web-page-design` and workflow integration | Done |
 | P2.2 `web-responsive-design` and workflow integration | Done |
 | P2.3 `web-design-review` and workflow integration | Done |
+| P2.4 `web-implementation` and workflow integration | Done |
 
-Next: optional implementation / visual verification capabilities and more host runtime evidence. See [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Next: Visual Verification (planned) and more host runtime evidence. See [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
 ---
 

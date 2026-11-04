@@ -47,16 +47,31 @@
 
 无截图不得 Visual 呈现 PASS；无浏览器不得交互/响应式运行 PASS；CRITICAL 确证不得 APPROVED。
 
-## review → 实现（无独立 Implementation Skill）
+## design review → web implementation（available）
 
-- 按审查 Acceptance Criteria 与 Issue 整改后再实现  
-- 勿将「未建的 Web Implementation Skill」标为 available  
+`06-design-review/<page-id>/design-review.md` 的结论决定实现准入：
 
-## page design → HTML 实现（非本仓库 Skill）
+| 结论 | 实现 |
+|---|---|
+| APPROVED | 允许正式实现 |
+| APPROVED_WITH_NOTES | 允许；NOTES → Pending |
+| NEEDS_REVISION | 默认阻止正式实现；用户明示原型/局部 → RESTRICTED |
+| BLOCKED | 阻止相关范围 |
+| INSUFFICIENT_EVIDENCE | 不自动失败；规格足够部分可实现；呈现/运行 `NOT_VERIFIED` |
 
-- 入口行为与 CTA 去向可实现  
+`07-web-implementation/<page-id>/implementation-report.md` 至少含：Project Discovery、Input Inventory、Readiness、Mapping、Fidelity、Verification（分类型）、Deviations、Pending、实际修改文件（或 NO_CODE_CHANGES / CASE_DEMO）。
+
+- Design Review 负责审查设计；Web Implementation 负责实现；不得擅自推翻已批准设计。  
+- 代码写入**用户项目**；报告写入 `07-web-implementation/`。  
+- Build PASS ≠ 视觉 PASS；Visual Verification 仍为 **planned**。  
+- 勿将未建的 Visual Verification Skill 标为 available。
+
+## page design → HTML 实现（经 web-implementation）
+
+- 入口行为与 CTA 去向可实现或标 BACKEND_REQUIRED  
 - 文案非 Lorem；假数据未标 PLACEHOLDER/TODO 视为红灯  
-- 窄屏主 CTA 行为与 `05-responsive-design` 一致  
+- 窄屏主 CTA 行为与 `05-responsive-design` 一致或记偏差  
+- 优先复用项目组件与主题变量  
 
 ## Review 清单（人工/Agent）
 
@@ -69,8 +84,10 @@
 - 把 HYPOTHESIS 写成已验证用户研究  
 - 将 planned Skill 伪造成已完成交付  
 - 页面设计编造价格/评价并标为事实  
-- 未测试却宣称响应式/WCAG/审查已通过  
+- 未测试却宣称响应式/WCAG/审查/实现视觉已通过  
 - 审查无证据却 APPROVED  
+- NEEDS_REVISION 未授权却宣称生产级实现完成  
+- CASE_DEMO 冒充生产部署  
 
 ### Yellow
 
@@ -78,3 +95,4 @@
 - 首屏堆满统计条而无题材锚点  
 - IA 与 Brief 主转化不一致却未记录冲突  
 - 验证页超出 Sitemap 未在 Overview 声明  
+- READY_WITH_GAPS 未写明缺口影响  

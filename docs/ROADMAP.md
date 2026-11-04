@@ -12,8 +12,9 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
     → P2.0 Web Design Skills 第一批（Brief / IA / Design System）
     → P2.1 web-page-design + 工作流整合
     → P2.2 web-responsive-design + 工作流整合
-    → P2.3 web-design-review + 工作流整合 ← 当前完成待审
-    → 后续实现/视觉验证或品牌 PPT Skills（按需）
+    → P2.3 web-design-review + 工作流整合
+    → P2.4 web-implementation + 工作流整合 ← 当前完成待审
+    → 后续 Visual Verification（planned）或品牌 PPT Skills（按需）
 ```
 
 ---
@@ -74,6 +75,22 @@ P0 审计规划 → P1 Skills 工程初始化 → P1.5 MIT/安装/宿主兼容
 | `web-design-workflow` | 阶段 8 → available（v0.5.0） |
 
 验收：三页审查案例；无截图不 Visual PASS；CASE_DEMO 明示；`pnpm verify`；D-009。
+
+---
+
+## P2.4 — Web Implementation（Prompt 2.4）
+
+**目标**：将已批准（或准入允许）的设计规格落实为用户项目中的真实网页代码方法论 Skill。
+
+| Skill | 状态 |
+|---|---|
+| `web-implementation` | **已完成** |
+| `web-design-workflow` | 阶段 9 → available（v0.6.0）；Visual Verification 仍 planned |
+| Visual Verification | **未开始**（禁止空壳；勿标 Available） |
+
+验收：Project Discovery / Mapping / Fidelity / Verification 规范；Design Review 准入；三页 CASE_DEMO 实施报告（无虚构 build/浏览器 PASS）；结构+案例测试；双语 README；`pnpm verify`；D-010。
+
+**本阶段不做**：P2.5 视觉回归平台、Agent Runtime、SaaS、网站托管。
 
 ---
 

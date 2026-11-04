@@ -6,6 +6,8 @@
 
 ### Added
 
+- P2.4：原子 Skill `web-implementation`（项目发现、设计输入就绪、设计→代码映射、保真度与验证 → `07-web-implementation/`）。  
+- P2.4：启航学堂三页实施报告（CASE_DEMO / NO_PROJECT）与结构/案例测试。  
 - P2.3：原子 Skill `web-design-review`（九维证据审查、严重度、整改与结论 → `06-design-review/`）。  
 - P2.3：启航学堂三页审查案例与结构/案例测试。  
 - P2.2：原子 Skill `web-responsive-design`（视口/断点理由、布局转换、导航与验证 → `05-responsive-design/`）。  
@@ -28,6 +30,8 @@
 
 ### Changed
 
+- P2.4：`web-design-workflow` v0.6.0 将 `web-implementation` 标为 available；交付目录增加 `07-web-implementation/`；Visual Verification 仍 planned。  
+- P2.4：双语 README / ROADMAP / PRD 同步；D-010。  
 - P2.3：`web-design-workflow` v0.5.0 将 `web-design-review` 标为 available；交付目录增加 `06-design-review/`。  
 - P2.3：双语 README / ROADMAP 同步；D-009。  
 - P2.2：`web-design-workflow` 将 `web-responsive-design` 标为 available；交付目录增加 `05-responsive-design/`。  

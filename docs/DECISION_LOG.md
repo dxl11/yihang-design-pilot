@@ -151,4 +151,17 @@
 3. Evidence Model 强制区分规格意图 vs 截图呈现 vs 浏览器行为；缺证 → `NOT TESTED`。  
 4. 结论集：`APPROVED` | `APPROVED_WITH_NOTES` | `NEEDS_REVISION` | `BLOCKED` | `INSUFFICIENT_EVIDENCE`；CRITICAL 确证不得 APPROVED。  
 5. 仓库案例可用 `CASE_DEMO` Issue 演示写法，不得伪装为线上实测。  
-6. 不开发 Agent Runtime / Implementation Skill 空壳。
+6. （历史）当时不开发 Implementation Skill 空壳；实现已由 **D-010 / P2.4** 交付。
+
+---
+
+## 2026-11-04 · D-010：网页实现 Discovery / 映射 / 保真度（P2.4）
+
+### 裁定
+
+1. `web-implementation` 为独立原子 Skill；Workflow 编排审查→实现准入，不替代实施方法论。  
+2. 代码写入**用户项目**；报告写入 `design-output/07-web-implementation/`。  
+3. 必含 Project Discovery、Input Readiness（READY / READY_WITH_GAPS / BLOCKED）、Design-to-Code Mapping、Fidelity（MATCHED 等）、Verification 分类型诚实状态。  
+4. Design Review 准入：APPROVED / WITH_NOTES 可正式实现；NEEDS_REVISION 默认阻止（可 RESTRICTED）；BLOCKED 阻止；INSUFFICIENT_EVIDENCE 可规格层实现但呈现 NOT_VERIFIED。  
+5. 仓库案例为 **CASE_DEMO**（NO_PROJECT）；禁止虚构 build/浏览器/部署 PASS；Visual Verification 仍 planned。  
+6. 不开发 Agent Runtime / SaaS / 像素回归平台。
